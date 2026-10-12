@@ -122,9 +122,6 @@ Set `PUBLIC_SITE_MODE=preview` for a private preview build.
 
 ```
 koudelka/
-├── PRD.md                 # product requirements
-├── TASKS.md               # backlog, visual identity, status log
-├── IMAGES.md              # image slots to curate (generated)
 ├── content/               # all text and data
 │   ├── people/ files/     # MDX case files
 │   ├── acts.yaml places.yaml sources.yaml images.yaml
@@ -146,7 +143,7 @@ koudelka/
 
 - Content is authored as Markdown/MDX/YAML in the repo. There is no CMS and no backend.
 - Every file carries a `spoilerLevel`; every factual claim cites an entry in `content/sources.yaml`.
-- Images are slots listed in `content/images.yaml`. Drop a file named exactly like the slot id into `public/images/` and it is picked up on the next build. Run `node scripts/images-list.mjs` to regenerate [IMAGES.md](IMAGES.md); `/system/images` shows the state of every slot.
+- Images are slots listed in `content/images.yaml`. Drop a file named exactly like the slot id into `public/images/` and it is picked up on the next build. `/system/images` shows the state of every slot.
 
 ## Design
 
@@ -163,11 +160,9 @@ Typefaces are open-licence (OFL) and self-hosted. Colours and spacing live only 
 
 Rights holders: write to us and we will remove any material.
 
-See [PRD.md](PRD.md) §10 for the full guidelines.
-
 ## Status
 
-Work in progress. See [TASKS.md](TASKS.md) for the current status log and [PRD.md](PRD.md) for the roadmap.
+Work in progress (version 0).
 
 ## Author
 
