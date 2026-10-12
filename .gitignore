@@ -27,3 +27,9 @@ test-results/
 # Source material that stays on this machine: scans of printed guides, photographs and raw art.
 # The site only needs the processed copies in public/images/.
 reference/
+
+# Local planning docs (not part of the repository)
+CLAUDE.md
+IMAGES.md
+PRD.md
+TASKS.md
