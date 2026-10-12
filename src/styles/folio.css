@@ -1,0 +1,200 @@
+/* FOLIO: the look of every reading page. A Victorian investigator's dossier laid over a monastic manuscript:
+   aged parchment, a rubricated gothic initial, wax seals, photographs held by corner mounts,
+   handwritten annotations. The home and the 3D walkthrough model are untouched by design (they live outside .page). */
+
+:root {
+  --o-blob: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M97.0 50.0 L97.0 53.1 L96.0 56.1 L94.6 58.9 L93.3 61.6 L92.3 64.4 L91.4 67.2 L90.3 69.9 L88.7 72.3 L86.5 74.4 L84.1 76.2 L81.9 78.0 L80.1 80.1 L78.9 82.9 L77.7 86.1 L76.2 89.3 L74.1 91.7 L71.1 92.8 L67.6 92.5 L64.0 91.2 L60.6 89.6 L57.7 88.6 L55.1 88.7 L52.6 89.8 L50.0 91.6 L47.2 93.2 L44.2 94.0 L41.3 93.9 L38.4 93.1 L35.7 92.0 L33.0 90.9 L30.3 90.0 L27.4 89.1 L24.8 87.7 L22.6 85.8 L20.9 83.1 L19.8 80.2 L18.7 77.5 L17.1 75.3 L14.7 73.6 L11.5 72.3 L8.0 70.7 L5.0 68.6 L3.2 65.9 L3.1 62.6 L4.3 59.1 L6.2 55.8 L8.0 52.8 L9.0 50.0 L9.2 47.3 L8.7 44.6 L8.3 41.7 L8.3 38.8 L9.0 36.1 L10.1 33.5 L11.4 31.0 L12.5 28.3 L13.4 25.5 L14.3 22.6 L15.7 20.0 L17.9 17.9 L20.8 16.7 L24.1 16.3 L27.4 16.1 L30.1 15.5 L32.2 13.9 L33.9 11.2 L35.7 7.9 L37.8 4.6 L40.5 2.3 L43.6 1.4 L46.9 2.0 L50.0 3.6 L52.9 5.4 L55.7 6.8 L58.4 7.6 L61.2 8.1 L64.0 8.7 L66.7 9.6 L69.2 11.1 L71.4 12.9 L73.7 14.6 L76.1 15.9 L79.0 17.0 L82.0 18.0 L84.8 19.5 L86.9 21.7 L87.8 24.7 L87.7 28.3 L86.9 31.8 L86.3 35.0 L86.6 37.6 L88.1 39.8 L90.6 41.9 L93.5 44.3 L95.8 47.0Z' fill='black'/></svg>");
+  --o-divider: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20'><g stroke='black' fill='none' stroke-width='1.4'><path d='M8 10H124M176 10H292'/><path d='M20 7H110M190 7H280' stroke-width='.7'/></g><g fill='black'><path d='M150 2L158 10L150 18L142 10Z'/><circle cx='133' cy='10' r='2.4'/><circle cx='167' cy='10' r='2.4'/><circle cx='120' cy='10' r='1.4'/><circle cx='180' cy='10' r='1.4'/></g></svg>");
+  --paper-blot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='720'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.012 .02' numOctaves='5' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .34  0 0 0 0 .16  0 0 0 .38 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  --paper-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .13  0 0 0 0 .06  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  --stone-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.02 .03' numOctaves='5' seed='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ── The sheet of paper under everything that is not the 3D home ── */
+:root[data-mode='archive'] body:not(.dark)::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; mix-blend-mode: multiply;
+  background:
+    radial-gradient(circle at 12% 18%, var(--foxing) 0 28px, transparent 90px),
+    radial-gradient(circle at 83% 34%, var(--foxing) 0 18px, transparent 70px),
+    radial-gradient(circle at 27% 78%, var(--foxing) 0 34px, transparent 110px),
+    radial-gradient(circle at 91% 88%, var(--foxing) 0 22px, transparent 80px),
+    var(--paper-grain), var(--paper-blot);
+}
+:root[data-mode='archive'] body:not(.dark)::after {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; box-shadow: inset 0 0 170px 10px var(--burn);
+}
+:root[data-mode='nemeton'] body:not(.dark)::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% -10%, rgb(217 164 65 / 0.13), transparent 62%), var(--stone-noise);
+}
+body:not(.dark) main, body:not(.dark) .footer { position: relative; z-index: 1; }
+/* Scanlines suit a screen, not paper: on parchment the glass keeps only its vignette. */
+:root[data-mode='archive'] body:not(.dark) .glass { background: radial-gradient(ellipse at center, transparent 62%, rgb(40 20 0 / 0.22) 100%); }
+:root[data-mode='archive'] body:not(.dark) .glass::after { opacity: 0.02; }
+
+/* ── The folio ── */
+.page { position: relative; overflow-x: clip; max-width: 1100px; padding: 48px 40px 128px; font-family: var(--font-fell); font-size: 1.2rem; line-height: 1.68; }
+@media (max-width: 640px) { .page { padding: 32px 20px 120px; font-size: 1.1rem; } }
+.page .tbl p, .page .note p { max-width: none; }
+
+/* Running head: the reference code, set like a folio number. */
+.page .mono { font: 600 0.8rem/1.5 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-dim); }
+.page > .mono:first-child { display: flex; align-items: center; gap: var(--s3); }
+.page > .mono:first-child::after { content: ''; height: 1px; flex: 1; background: var(--hair); }
+
+/* ── Headings ── */
+.page h1 { font: 700 clamp(2.3rem, 6.2vw, 4.5rem)/1.06 var(--font-title); text-transform: none; letter-spacing: 0.01em; margin: var(--s3) 0 var(--s5); text-wrap: balance; }
+.page h2 { font: 600 clamp(1.4rem, 3.4vw, 2.1rem)/1.15 var(--font-display); letter-spacing: 0.06em; }
+.page h2::after { content: ''; display: block; width: 100%; max-width: 300px; margin-top: var(--s2); height: 18px; background: var(--hair-ink, var(--fg-dim));
+  -webkit-mask: var(--o-divider) left center / contain no-repeat; mask: var(--o-divider) left center / contain no-repeat; }
+.page h3 { font: 600 1.15rem/1.2 var(--font-display); letter-spacing: 0.1em; }
+
+/* The first paragraph opens with a rubricated blackletter initial, as in a monastic manuscript. */
+.page > h1 + p:not(.mono)::first-letter, .page .prose > p:first-of-type::first-letter, .page .initial::first-letter {
+  font-family: var(--font-initial); font-size: 4.2em; line-height: 0.8; float: left; padding: 0.06em 0.1em 0 0; color: var(--wax);
+}
+.page > h1 + p:not(.mono), .page .prose > p:first-of-type, .page .initial { display: flow-root; }
+:root[data-mode='nemeton'] .page > h1 + p:not(.mono)::first-letter, :root[data-mode='nemeton'] .page .prose > p:first-of-type::first-letter { color: var(--blood-text); }
+
+/* ── Links, buttons, stamps ── */
+.page a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.page .btn { font: 700 0.82rem var(--font-display); letter-spacing: 0.16em; border: 3px double var(--bg); outline: 2px solid var(--fg); outline-offset: 0; background: var(--ink-brown); color: var(--leaf); box-shadow: 3px 4px 0 var(--hair); }
+:root[data-mode='nemeton'] .page .btn { background: var(--gilt); color: var(--ink); border-color: var(--ink); outline-color: var(--gilt); box-shadow: 3px 4px 0 var(--line); }
+.page .stamp { display: inline-block; font: 700 0.72rem var(--font-display); letter-spacing: 0.2em; color: var(--wax); border: 3px double var(--wax); padding: 4px 12px; transform: rotate(-1.6deg); opacity: 0.88; mix-blend-mode: multiply; margin: var(--s2) 0; }
+:root[data-mode='nemeton'] .page .stamp { color: var(--blood-text); border-color: var(--blood-text); mix-blend-mode: normal; }
+.page .chip { font: 600 0.74rem var(--font-display); letter-spacing: 0.12em; }
+
+/* ── Notes: a handwritten label and an indented, italic remark ── */
+.page .note { border: 0; border-left: 3px double var(--wax); padding: var(--s2) var(--s4); font-style: italic; background: transparent; }
+.page .note > .mono { font: 400 1.7rem/1.1 var(--font-script); letter-spacing: 0; text-transform: none; color: var(--accent); }
+.page .script, .page figcaption { font: 400 1.5rem/1.2 var(--font-script); letter-spacing: 0; text-transform: none; color: var(--accent); }
+.page figcaption.mono { font: 400 1.5rem/1.2 var(--font-script); text-transform: none; letter-spacing: 0; color: var(--accent); }
+.page .rose figcaption { display: grid; gap: 0; }
+
+/* ── Wax seals (spoilers): a red seal, a cracked seal when opened, and a torn slip of paper ── */
+.page .seal { border: 0; padding: 0; margin: var(--s5) 0; max-width: 62ch; }
+.page .seal summary { position: relative; display: flex; align-items: center; gap: var(--s4); min-height: 68px; cursor: pointer; list-style: none; font: 700 0.8rem var(--font-display); letter-spacing: 0.18em; color: var(--accent); }
+.page .seal summary::-webkit-details-marker { display: none; }
+.page .seal summary::before {
+  content: ''; flex: none; width: 68px; height: 68px; background: radial-gradient(circle at 34% 28%, var(--wax-hi), var(--wax) 52%, var(--wax-lo));
+  -webkit-mask: var(--o-blob) center / contain no-repeat; mask: var(--o-blob) center / contain no-repeat; filter: drop-shadow(2px 3px 2px rgb(40 10 10 / 0.5)); transition: transform 0.25s steps(5);
+}
+.page .seal summary::after { content: 'N'; position: absolute; left: 0; top: 0; width: 68px; text-align: center; font: 700 1.7rem/68px var(--font-display); color: var(--wax-lo); text-shadow: 1px 1px 0 var(--wax-hi); letter-spacing: 0; pointer-events: none; transition: opacity 0.2s; }
+.page .seal:hover summary::before { transform: rotate(-4deg) scale(1.04); }
+.page .seal[open] summary::before { transform: rotate(14deg) scale(0.86); filter: saturate(0.55) drop-shadow(1px 2px 1px rgb(40 10 10 / 0.4)); }
+.page .seal[open] summary::after { opacity: 0.35; }
+.page .seal > div { margin-top: var(--s3); padding: var(--s5) var(--s5); background: var(--slip); color: var(--fg);
+  clip-path: polygon(0 5%, 5% 0, 13% 4%, 24% 0, 37% 4%, 49% 0, 62% 4%, 75% 0, 88% 4%, 100% 0, 100% 95%, 93% 100%, 81% 96%, 67% 100%, 53% 96%, 39% 100%, 25% 96%, 12% 100%, 0 96%); }
+
+/* ── Case-file cards, portraits mounted with corners ── */
+/* ── Ink and screentone: one printing treatment for every picture, so CG, pencil sketches and in-game models read as one comic. ── */
+:root[data-mode='nemeton'] { --panel: var(--paper); --panel-shadow: var(--gilt); --tone: radial-gradient(circle, rgb(230 220 198 / 0.4) 0.9px, transparent 1.4px); }
+
+/* Case-file cards are comic panels: a heavy ink border, a hard shadow, a screentone corner. */
+.page .sheet { position: relative; background: var(--card); border: 3px solid var(--panel); box-shadow: 6px 6px 0 var(--panel-shadow); padding: var(--s5); transition: transform 0.15s steps(3), box-shadow 0.15s steps(3); }
+.page .sheet::after { content: ''; position: absolute; top: 0; right: 0; width: 64px; height: 64px; background: var(--tone) 0 0 / 5px 5px; clip-path: polygon(0 0, 100% 0, 100% 100%); opacity: 0.5; pointer-events: none; }
+.page .sheet:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--panel-shadow); }
+:root[data-mode='nemeton'] .page .sheet:hover { box-shadow: 9px 9px 0 var(--panel-shadow); }
+
+/* Portraits are panels too, set a few degrees off the grid like a page of manga. */
+.page .mount { position: relative; display: block; width: fit-content; padding: 0; background: var(--panel); border: 4px solid var(--panel); box-shadow: 7px 7px 0 var(--panel-shadow); transform: rotate(-1.2deg); overflow: hidden; }
+.page .mount::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--tone) 0 0 / 4px 4px; mix-blend-mode: multiply; opacity: 0.38; }
+:root[data-mode='nemeton'] .page .mount::after { mix-blend-mode: screen; opacity: 0.22; }
+.page .mount img, .page .mount canvas { display: block; object-fit: cover; object-position: 50% 12%; filter: grayscale(0.7) sepia(0.28) contrast(1.15); transition: filter 0.25s; }
+.page .sheet:hover .mount img, .page .portrait:hover img, .page .portrait:hover canvas { filter: none; }
+.page .pcard-img { width: 150px; height: 188px; aspect-ratio: 4 / 5; border: 0; }
+.page .portrait { border: 0; background: transparent; width: 244px; aspect-ratio: auto; padding: 0; }
+.page .portrait .frame { position: relative; width: 236px; aspect-ratio: 4 / 5; }
+.page .portrait .frame img, .page .portrait .frame canvas { width: 100%; height: 100%; }
+.page .portrait + figcaption { display: inline-block; margin-top: var(--s5); padding: 3px 12px; background: var(--card); color: var(--fg); border: 2px solid var(--panel); box-shadow: 3px 3px 0 var(--panel-shadow); font: 700 0.78rem/1.3 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; transform: rotate(0.8deg); }
+
+/* A burst of speed lines sits behind each file's heading, like the opening panel of a chapter. */
+.page .hero-file { position: relative; grid-template-columns: 262px 1fr; gap: var(--s6); align-items: start; }
+.page .hero-file::before { content: ''; position: absolute; left: -60px; top: -50px; width: 470px; height: 470px; background: repeating-conic-gradient(from 0deg, var(--panel) 0 1deg, transparent 1deg 6.5deg); opacity: 0.1; pointer-events: none;
+  -webkit-mask: radial-gradient(circle, transparent 22%, black 23%, transparent 74%); mask: radial-gradient(circle, transparent 22%, black 23%, transparent 74%); }
+.page .hero-file > * { position: relative; }
+
+/* The register opens like a title spread: the poster, the intro and the title in vertical kana. */
+.page .people-intro { display: grid; grid-template-columns: 230px 1fr auto; gap: var(--s6); align-items: start; margin-block: var(--s5); }
+.page .people-intro .pic { margin: 0; }
+.page .kana { writing-mode: vertical-rl; font: 700 clamp(2.2rem, 5vw, 3.4rem)/1 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif; letter-spacing: 0.22em; color: var(--wax); margin: 0; user-select: none; }
+@media (max-width: 760px) { .page .people-intro { grid-template-columns: 1fr; } .page .kana { writing-mode: horizontal-tb; } }
+.page .sheet-bio { font: 400 1.05rem/1.5 var(--font-fell); }
+.page .pcard-line { font: italic 400 1rem/1.4 var(--font-fell); color: var(--accent); }
+.page .pcard h3 { font-size: 1.3rem; margin: var(--s1) 0; }
+
+/* ── Ledger tables, drawings, dividers ── */
+.page .tbl { font: 400 1rem/1.5 var(--font-fell); }
+.page .tbl th { font: 700 0.74rem var(--font-display); letter-spacing: 0.14em; color: var(--accent); }
+.page .tbl thead th { border-bottom: 3px double var(--fg-dim); }
+.page .tbl td, .page .tbl th { border-bottom-color: var(--hair); }
+.page hr.rule { border: 0; height: 18px; background: var(--fg-dim); -webkit-mask: var(--o-divider) center / min(300px, 100%) 18px no-repeat; mask: var(--o-divider) center / min(300px, 100%) 18px no-repeat; margin-block: var(--s6); }
+.page .drawing svg { background: var(--card); border: 3px double var(--fg-dim); padding: var(--s3); box-shadow: 0 10px 22px rgb(40 20 0 / 0.2); color: var(--fg); }
+.page .drawing figcaption { font: 700 0.78rem var(--font-display); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: var(--s3); color: var(--fg-dim); }
+.page .area-no { font: 700 2.4rem/1 var(--font-initial); color: var(--wax); }
+:root[data-mode='nemeton'] .page .area-no { color: var(--blood-text); }
+
+/* ── The attribute rose ── */
+.rose { margin: var(--s4) 0; width: min(100%, 340px); }
+.rose svg { width: 100%; height: auto; color: var(--fg); }
+.rose figcaption { text-align: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* ── The story: each act opens with a blackletter numeral in a red square ── */
+.page .act-head { display: flex; align-items: center; gap: var(--s4); margin-top: clamp(var(--s6), 6vw, var(--s7)); }
+.page .act-head h2 { margin: 0; }
+.page .act-head h2::after { display: none; }
+.page .act-no { display: grid; place-items: center; width: 74px; height: 74px; flex: none; border: 3px double var(--wax); color: var(--wax); font: 700 2.6rem/1 var(--font-initial); background: var(--card); box-shadow: 3px 3px 0 var(--hair); }
+:root[data-mode='nemeton'] .page .act-no { color: var(--blood-text); border-color: var(--blood-text); }
+.page .midnight { text-align: center; font: 700 0.9rem var(--font-display); letter-spacing: 0.4em; color: var(--accent); border-block: 3px double var(--wax); padding: var(--s3) 0; margin: var(--s7) 0; }
+
+/* ── The deck of cards ── */
+.page .tarot { background: var(--soot); color: var(--paper); border: 3px double var(--gilt); outline: 1px solid var(--gilt); outline-offset: -10px; box-shadow: 0 16px 30px rgb(0 0 0 / 0.55); }
+.page .tarot .mono { color: var(--paper-dim); letter-spacing: 0.14em; }
+.page .tarot-name { font-family: var(--font-display); letter-spacing: 0.08em; }
+.page .tarot img { object-fit: cover; object-position: 50% 12%; filter: grayscale(0.6) sepia(0.25) contrast(1.1); }
+.page .tarot-num { font-family: var(--font-initial); font-size: 1.9rem; color: var(--gilt); }
+.page .half { background: radial-gradient(circle at 50% 30%, var(--wax-hi), var(--wax) 55%, var(--wax-lo)); border-color: var(--wax-lo); }
+.page .half span { font: 700 0.9rem var(--font-display); letter-spacing: 0.3em; color: var(--paper); text-shadow: 1px 1px 0 var(--wax-lo); }
+.page .locked .cover::after { content: 'N'; position: absolute; inset: 0; display: grid; place-items: center; font: 700 4rem var(--font-display); color: var(--wax-lo); opacity: 0.28; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .page .sheet, .page .seal summary::before { transition: none; } }
+:root[data-motion='off'] .page .sheet, :root[data-motion='off'] .page .seal summary::before { transition: none; }
+
+@media (max-width: 700px) { .page .hero-file { grid-template-columns: 1fr; } }
+.page .stats-row { display: flex; flex-wrap: wrap; gap: var(--s5); align-items: center; }
+.page .note-inline { font-style: italic; flex: 1 1 240px; color: var(--fg-dim); }
+
+
+/* ── Image plates: the pictures carry the identity; the frame around them stays plain. ── */
+.pic { margin: var(--s6) 0; max-width: 100%; }
+.pic-frame { position: relative; display: block; width: fit-content; max-width: 100%; border: 3px solid var(--panel); box-shadow: 6px 6px 0 var(--panel-shadow); background: var(--soot); overflow: hidden; }
+.pic-frame::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--tone) 0 0 / 4px 4px; mix-blend-mode: multiply; opacity: 0.3; }
+:root[data-mode='nemeton'] .pic-frame::after { mix-blend-mode: screen; opacity: 0.18; }
+.pic img { display: block; width: auto; max-width: 100%; max-height: 72vh; height: auto; object-fit: cover; object-position: 50% 20%; filter: grayscale(0.6) sepia(0.25) contrast(1.1); transition: filter 0.25s; }
+.pic:hover img { filter: none; }
+.pic figcaption { margin-top: var(--s4); font: italic 400 0.95rem/1.4 var(--font-fell); color: var(--fg-dim); text-transform: none; letter-spacing: 0; }
+.pic figcaption small { display: block; font-size: 0.8rem; opacity: 0.8; }
+.pic.pic-wide { width: 100%; }
+.pics-grid { display: grid; gap: var(--s5); grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); margin-block: var(--s5); }
+.pics-grid .pic { margin: 0; }
+.pic-hero .pic-frame { width: 100%; }
+.pic-hero img { width: 100%; max-height: 70vh; }
+
+.pic-small { max-width: 320px; }
+.pics-grid:not(:has(.pic)) { display: none; }
+
+/* The four-disc case: a pixelated stage in the monastery's own dark teal, with the same ink frame as other pictures. */
+.case-viewer { margin: var(--s6) auto; max-width: 560px; }
+.case-stage { position: relative; border: 3px solid var(--panel); box-shadow: 6px 6px 0 var(--panel-shadow); background: var(--soot); aspect-ratio: 4 / 3; overflow: hidden; }
+.case-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.case-canvas { display: none; width: 100%; height: 100%; image-rendering: pixelated; touch-action: pan-y; cursor: grab; }
+.case-canvas.is-live { display: block; }
+.case-canvas:active { cursor: grabbing; }
+.case-canvas:focus-visible { outline: 3px solid var(--gilt); outline-offset: -6px; }
+.case-controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin-top: var(--s4); }
+.case-viewer figcaption { margin-top: var(--s3); font: italic 400 0.95rem/1.4 var(--font-fell); color: var(--fg-dim); }
+
+/* Small controls under the case, so they stay a footnote to the object itself. */
+.page .btn.btn--sm { min-height: 34px; padding: 0 14px; font-size: 0.72rem; letter-spacing: 0.1em; border-width: 2px; outline-width: 1px; box-shadow: 2px 2px 0 var(--hair); }
+.page .btn.btn--sm:disabled { opacity: 0.35; cursor: default; }
+.case-sep { width: 1px; height: 18px; background: var(--fg-dim); opacity: 0.5; margin-inline: var(--s2); }

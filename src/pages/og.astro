@@ -1,0 +1,27 @@
+---
+// Source of the share image (1200×630). Rendered to public/og.png by scripts/render-og.mjs. Never indexed.
+import '../styles/tokens.css';
+import '../styles/base.css';
+---
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="robots" content="noindex" /><title>OG</title></head>
+  <body>
+    <div class="og">
+      <img src="/world/hero-wide.webp" alt="" width="1200" height="630" />
+      <div class="og-plate">
+        <p class="mono">PLAYSTATION · 1999</p>
+        <h1>The Nemeton Archive</h1>
+        <p class="og-tag">Some places remember what people choose to forget.</p>
+      </div>
+    </div>
+    <style>
+      .og { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--world-bg); }
+      .og img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+      .og-plate { position: absolute; left: 64px; top: 72px; width: 640px; padding: 40px; background: var(--plate); border: var(--rule) solid var(--edge); box-shadow: var(--shadow-line-lg); }
+      .og h1 { font-size: 8rem; color: var(--paper); margin: 8px 0 16px; }
+      .og-tag { font: italic 400 1.9rem/1.25 var(--font-body); color: var(--paper); margin: 0 0 24px; }
+      .og .mono { color: var(--paper-dim); }
+    </style>
+  </body>
+</html>

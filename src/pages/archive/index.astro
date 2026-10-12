@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CATALOG, stateLabel } from '../../lib/catalog';
+const shelves = [
+  ['DEVELOPMENT NOTES', '/design', 'Sacnoth, Kikuta and how the game was made.'],
+  ['RELEASE HISTORY', '/archive/releases', 'Three releases, four discs, 1997 to 2026.'],
+  ['LEGACY', '/archive/legacy', 'Shadow Hearts, a cult, and what came after.'],
+] as const;
+---
+<Base title="Archive" current="/archive" description="The vault: fourteen case files, development notes, release history and sources.">
+  <div class="page">
+    <h1>The vault</h1>
+    <p>Fourteen files. Every claim with its source.</p>
+    <table class="tbl">
+      <thead><tr><th scope="col">No.</th><th scope="col">Reference</th><th scope="col">Title</th><th scope="col">Kind</th><th scope="col">State</th></tr></thead>
+      <tbody>
+        {CATALOG.map((e) => (
+          <tr>
+            <td>{String(e.number).padStart(3, '0')}</td>
+            <td><a href={e.href}>{e.title}</a></td>
+            <td>{e.kind}</td>
+            <td>{stateLabel(e)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <h2>Shelves</h2>
+    <div class="grid3">
+      {shelves.map(([t, href, d]) => <a class="sheet" href={href}><span class="mono">{t}</span><h3>{t.charAt(0) + t.slice(1).toLowerCase()}</h3><p>{d}</p></a>)}
+    </div>
+  </div>
+</Base>

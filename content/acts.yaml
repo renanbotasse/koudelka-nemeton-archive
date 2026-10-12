@@ -1,0 +1,45 @@
+- id: prologue
+  number: 0
+  title: Prologue
+  spoilerLevel: none
+  body: "It is All-Hallows' Eve, 1898. A young woman rides to a monastery on a cliff in Wales, drawn by a voice only she can hear. The gates are locked from the inside and nobody answers. She does not wait to be invited: she climbs the wall, slips on the roof, loses something on the way and drops through a window into a stable. The story begins in the one place in the game where she is truly alone."
+- id: act-1
+  number: 1
+  title: Act I
+  spoilerLevel: none
+  body: "Inside the stable she finds a stranger who is hurt and being hunted by something that is not an animal. After the first fight, the two of them are taken in by the old couple who keep the house, who feed them, give them ammunition and say very little. Then a third guest is found unconscious in the garden: a bishop who has a mission he does not describe. Three people who have nothing in common but a night decide to stay together."
+- id: act-2
+  number: 2
+  title: Act II
+  spoilerLevel: none
+  body: "The party goes down. Beneath the house is a prison for people the monastery once punished, filled with bones from centuries ago, and with remains that are not as old. The place begins to speak, and the medium in the group is the one who listens. Here the game stops being a haunted-house story and becomes a story about what a building does to the people held inside it."
+- id: act-3
+  number: 3
+  title: Act III
+  spoilerLevel: story
+  body: "In the storage rooms the party finds a thief who has been watching the house. What he has seen explains the hosts, and a decision about him is made quickly and coldly. In the caretakers' rooms, a wall of paintings of the same ship starts to make sense. For the first time you see the portrait of a woman, and the house begins to look like a place built around her."
+- id: act-4
+  number: 4
+  title: Act IV
+  spoilerLevel: story
+  body: "In the library, a hidden coffin opens. A scholar who should be six centuries dead tells them about a book of resurrection, and the bishop admits why he came. Then the bell strikes midnight in the nave, and something rises that the party cannot fight. They are separated. Most of the game's second half starts with the main character on her own."
+- id: act-5
+  number: 5
+  title: Act V
+  spoilerLevel: story
+  body: "Alone, she learns what the hosts have done and why. It ends fast, and badly for them. She prays at the graves of the monastery's founder and a child, and finds the scholar waiting there. The tone shifts from threat to grief: almost everyone in this house acted out of love, and almost nobody acted well."
+- id: act-6
+  number: 6
+  title: Act VI
+  spoilerLevel: story
+  body: "The three regroup and reach the master's rooms. A child is either freed or fought, depending on a choice made much earlier. In front of a full-length portrait, the medium calls up the woman it shows, and the whole night finally explains itself: what was done, by whom, and what must be done to stop it."
+- id: act-7
+  number: 7
+  title: Act VII
+  spoilerLevel: story
+  body: "The church is overgrown with roots. In the crypt the party finds the place where the ritual was carried out, uses a relic against it and sets the building on fire. Fleeing the flames, they climb through scaffolding towards the bell tower. Every fight on the way is a fight with the house itself."
+- id: epilogue
+  number: 8
+  title: Epilogue
+  spoilerLevel: endings
+  body: "Nemeton burns to the ground. Morning reaches the cliffs. How the night ends depends on what you carried and what you won, and the endings have their own sealed page."

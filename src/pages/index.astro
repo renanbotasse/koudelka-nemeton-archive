@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import WorldCanvas from '../components/WorldCanvas';
+import { getCollection } from 'astro:content';
+import CatalogList from '../components/CatalogList.astro';
+import PersonCard from '../components/PersonCard.astro';
+
+const guests = (await getCollection('people')).filter((p) => p.data.group === 'guests').sort((a, b) => a.data.number - b.data.number);
+const marks = [['cliff', 'THE CLIFF'], ['gate', 'THE GATE'], ['house', 'THE HOUSE'], ['nave', 'THE NAVE'], ['midnight', 'MIDNIGHT'], ['cells', 'THE CELLS'], ['crypt', 'THE CRYPT'], ['dawn', 'DAWN']];
+---
+<Base title="Koudelka: The Nemeton Archive" dark current="/">
+  <div class="world-still" aria-hidden="true"></div>
+  <WorldCanvas client:idle />
+  <nav class="depth" aria-label="Depth">
+    {marks.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+  </nav>
+
+  <div class="descent">
+    <section class="beat hero" id="cliff" aria-labelledby="h-title">
+      <div class="plate">
+        <p class="mono">PLAYSTATION · 1999</p>
+        <h1 id="h-title">Koudelka<span class="h1-sub">The Nemeton Archive</span></h1>
+        <p class="tag">Some places remember what people choose to forget.</p>
+        <p><a class="btn" href="#gate">Enter the archive</a></p>
+      </div>
+    </section>
+
+    <section class="beat" id="gate" aria-label="The Gate">
+      <div class="plate lines">
+        <p class="mono">THE GATE</p>
+        <p>All-Hallows’ Eve, 1898.</p>
+        <p>A monastery on the cliffs of Wales.</p>
+        <p>The gates are locked.</p>
+        <p>Someone inside is calling.</p>
+      </div>
+    </section>
+
+    <section class="beat" id="name" aria-label="The Name">
+      <div class="plate">
+        <p><em>A Celtic sacred place; a grove set apart.</em></p>
+        <h2>You come in the way she did: over the wall.</h2>
+        <p>Read what the house kept. Open only what you are ready to know.</p>
+        <p><a class="btn" href="/walkthrough">Walk the grounds</a></p>
+      </div>
+    </section>
+
+    <section class="beat" id="house" aria-label="The House">
+      <div class="plate" style="max-width:1120px">
+        <p class="mono">THE HOUSE</p>
+        <h2>Three strangers.</h2>
+        <div class="grid3">
+          {guests.map((g) => (
+            <PersonCard id={g.id} name={g.data.name} number={g.data.number} roles={g.data.roles} summary={`${g.data.archetype}.`} />
+          ))}
+        </div>
+        <p style="margin-top:24px"><a class="btn btn--ghost" href="/people">The register of persons</a></p>
+      </div>
+    </section>
+
+    <section class="beat" id="nave" aria-label="The Nave">
+      <div class="plate lines">
+        <p>Before it was a house, it was a prison.</p>
+        <p>Before it was a prison, it was a monastery.</p>
+        <p>Before it was a monastery, it was holy ground.</p>
+        <p class="mono">The stone keeps all of it.</p>
+      </div>
+    </section>
+
+    <section class="beat" id="midnight" aria-label="Midnight">
+      <div class="plate" style="text-align:center;max-width:720px">
+        <p class="xii" aria-label="Twelve">XII</p>
+        <p style="margin-inline:auto"><em>Twelve strokes from the bell.</em></p>
+        <p style="margin-inline:auto">After the twelve strokes, everything that spoils the story is sealed. You choose whether to know it before you play.</p>
+      </div>
+    </section>
+
+    <section class="beat" id="cells" aria-label="The Cells">
+      <div class="plate">
+        <p class="mono">THE CELLS</p>
+        <h2>Below the house, a prison no one closed.</h2>
+        <p>The night is filed here, act by act.</p>
+        <p><a class="btn" href="/story">Incident report · sealed</a></p>
+      </div>
+    </section>
+
+    <section class="beat" id="sound" aria-label="The Design">
+      <div class="plate">
+        <p class="mono">THE DESIGN</p>
+        <h2>Why it feels like this</h2>
+        <p>Wind. Stone. A choir, very far away. Where the game came from, what it was built around, and how it sounds.</p>
+        <p><a class="btn btn--ghost" href="/design">Read the design notes</a></p>
+      </div>
+    </section>
+
+    <section class="beat" id="crypt" aria-label="The Crypt">
+      <div class="plate" style="max-width:760px">
+        <p class="mono">THE CRYPT</p>
+        <h2>At the bottom, the archive.</h2>
+        <p>Fourteen files. Every claim with its source.</p>
+        <CatalogList />
+        <p><a class="btn" href="/archive">Open the vault</a></p>
+      </div>
+    </section>
+
+    <section class="beat end" id="dawn" aria-label="Dawn">
+      <div class="plate" style="text-align:center;max-width:560px">
+        <p class="mono">DAWN</p>
+        <h2>Morning reaches the cliffs.</h2>
+        <p style="margin-inline:auto">What it finds there is sealed.</p>
+        <p><a class="btn btn--ghost" href="/story/endings">Unseal the endings</a></p>
+        <p class="mono" style="margin-inline:auto">Opens a page that reveals how the story ends.</p>
+      </div>
+    </section>
+  </div>
+  <script>
+    // Marks the current stratum in the depth rail so the visitor always knows how deep they are.
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.depth a'));
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        links.forEach((l) => l.setAttribute('aria-current', String(l.hash === `#${e.target.id}`)));
+      }
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('.descent section[id]').forEach((s) => io.observe(s));
+  </script>
+</Base>

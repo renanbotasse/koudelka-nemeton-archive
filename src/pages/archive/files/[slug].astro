@@ -1,0 +1,22 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Plate from '../../../components/Plate.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const all = await getCollection('files');
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<Base title={d.title} description={d.summary} current="/archive">
+  <article class="page ed">
+    <p class="mono"><a href="/archive">The vault</a> · {d.docType}</p>
+    <h1>{d.title}</h1>
+    <hr class="rule" />
+    <Plate slot={`file-${entry.id}-image`} />
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

@@ -1,0 +1,69 @@
+/* EDITORIAL: reading pages use the whole width of the sheet. Headings sit in a narrow rail on the left and the
+   text runs beside them in a comfortable column, like marginal headings in a printed book. On a phone it all
+   stacks into one column. Pages opt in with class="page ed". */
+
+@media (min-width: 900px) {
+  .page.ed { display: grid; grid-template-columns: minmax(170px, 240px) minmax(0, 1fr); column-gap: var(--s6); align-items: start; }
+  /* Wrappers that only group content disappear, so their children join the grid. */
+  .page.ed > section, .page.ed .prose, .page.ed .guide, .page.ed .disc-group { display: contents; }
+  .page.ed > *, .page.ed > section > *, .page.ed .prose > *, .page.ed .guide > *, .page.ed .disc-group > * { grid-column: 2; min-width: 0; }
+  .page.ed p, .page.ed li, .page.ed ul, .page.ed ol, .page.ed .seal, .page.ed .note { max-width: none; }
+  .page.ed li:has(> .seal) { list-style: none; margin-left: -1.2em; }
+  .page.ed > h1 + p + .mono { grid-column: 1 / -1; }
+  .page.ed .tbl { table-layout: fixed; }
+  .page.ed .tbl tr > :first-child { width: clamp(9rem, 26%, 15rem); }
+
+  /* Full-width blocks: the title, pictures, maps, tables and the page-turner. */
+  .page.ed > h1, .page.ed > .mono:first-child, .page.ed > .pic-hero, .page.ed > .pics-grid:not(.pics-covers), .page.ed > astro-island,
+  .page.ed astro-island > *, .page.ed .case-viewer, .page.ed > .drawing, .page.ed > .next, .page.ed hr.rule, .page.ed .hero-file, .page.ed .midnight, .page.ed > .btn-row { grid-column: 1 / -1; }
+  .page.ed > h1 + p, .page.ed > h1 + p.mono + p { grid-column: 1 / -1; max-width: 82ch; font-size: 1.3rem; }
+  .page.ed > .mono + .mono { grid-column: 1 / -1; }
+
+  /* Headings live in the rail. */
+  .page.ed > h2, .page.ed .prose > h2, .page.ed .guide > h2, .page.ed > section > h2 { font-size: clamp(1.15rem, 1.7vw, 1.45rem); line-height: 1.2; }
+  .page.ed .act-head { margin-top: 0; }
+  .page.ed .disc-group > h3 { margin-top: 0; font-size: 1.1rem; }
+  /* The first thing beside a rail heading starts at the same height, and every section gets the same space above. */
+  .page.ed > h2, .page.ed .prose > h2, .page.ed .guide > h2, .page.ed > section > h2, .page.ed .act-head, .page.ed .disc-group > h3 { grid-column: 1; margin-top: var(--s6); }
+  .page.ed > h2 + *, .page.ed .prose > h2 + *, .page.ed .guide > h2 + *, .page.ed > section > h2 + *, .page.ed .act-head + *, .page.ed .disc-group > h3 + * { margin-top: var(--s6); }
+  .page.ed .midnight { margin-block: var(--s6); }
+  .page.ed .area-list { margin-top: var(--s6); }
+  .page.ed .case-viewer { margin-inline: auto; }
+}
+
+@media (min-width: 1240px) {
+  .page.ed { max-width: 1180px; }
+}
+
+@media (max-width: 899px) {
+  .page.ed .tbl { margin-block: var(--s4); }
+  .page.ed > h2 + * { margin-top: 0; }
+}
+
+@media (max-width: 700px) {
+  .case-controls { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+  .page .btn.btn--sm { min-height: 44px; font-size: 0.74rem; }
+  .case-sep { display: none; }
+  .page .sheet { padding: var(--s3); }
+  .page .portrait { margin-inline: auto; }
+  .page .stats-row { gap: var(--s4); justify-content: center; }
+  .page .area-list li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: var(--s2); }
+  .page .area-no { font-size: 2rem; }
+}
+
+/* Box covers stay cover-sized, however many there are. */
+.pics-grid.pics-covers { grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 220px)); }
+
+/* Pages with no section headings have no use for a rail: their text takes the full width, at a readable measure. */
+@media (min-width: 900px) {
+  .page.ed:not(:has(h2, .act-head)) > *, .page.ed:not(:has(h2, .act-head)) > section > * { grid-column: 1 / -1; }
+  .page.ed:not(:has(h2, .act-head)) > p, .page.ed:not(:has(h2, .act-head)) > .prose > p { max-width: 82ch; }
+}
+
+/* Tables keep their column labels on a phone: a few lines of script copy each header onto its cells. */
+@media (max-width: 640px) {
+  .tbl td[data-label]::before { content: attr(data-label); display: block; font: 700 0.7rem var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+}
+
+/* The register opens with a larger standfirst beside the poster instead of a lost line of text. */
+.page .people-intro > p:not(.kana) { font-size: 1.3rem; line-height: 1.6; max-width: 46ch; }

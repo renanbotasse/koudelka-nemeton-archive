@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import Plate from '../../components/Plate.astro';
+import CaseViewer from '../../components/CaseViewer';
+import { getCollection } from 'astro:content';
+const acts = (await getCollection('acts')).sort((a, b) => a.data.number - b.data.number);
+const roman = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+const label = (n: number): string => (n === 0 ? 'Prologue' : n === 8 ? 'Epilogue' : `Act ${roman[n]}`);
+---
+<Base title="Story" current="/story" description="The night of 31 October 1898, told act by act as an incident report.">
+  <div class="page ed">
+    <p class="mono">The incident report</p>
+    <h1>The incident report</h1>
+    <p>One night in one place: 31 October 1898, at a monastery on the Welsh coast. The first acts are open. The later ones are sealed, one by one, so you can stop wherever you want to stay unspoiled, and the endings sit behind a seal of their own.</p>
+    <p class="mono">The acts are this archive's own division, not the game's.</p>
+    <Plate slot="story-hero" class="pic-hero" />
+    <CaseViewer client:visible />
+    {acts.map((a) => (
+      <>
+        <section style="margin:0">
+          <header class="act-head"><h2>{label(a.data.number)}</h2></header>
+          {a.data.spoilerLevel === 'none' && <Plate slot={`act-${a.data.number}`} />}
+          {a.data.spoilerLevel === 'none' ? <p>{a.data.body}</p> : (
+            <details class="seal"><summary>[SEALED — {a.data.spoilerLevel === 'endings' ? 'the endings' : 'story spoilers'}]</summary><div><Plate slot={`act-${a.data.number}`} /><p>{a.data.body}</p></div></details>
+          )}
+        </section>
+        {a.data.number === 4 && <p class="midnight">· The twelfth stroke ·</p>}
+      </>
+    ))}
+    <p><a class="btn" href="/story/endings">Three dawns</a></p>
+  </div>
+</Base>

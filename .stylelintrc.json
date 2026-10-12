@@ -1,0 +1,101 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "rules": {
+    "color-no-hex": true,
+    "function-disallowed-list": [
+      "rgb",
+      "rgba",
+      "hsl",
+      "hsla",
+      "hwb",
+      "oklch",
+      "color-mix"
+    ],
+    "property-disallowed-list": [
+      "backdrop-filter",
+      "-webkit-backdrop-filter",
+      "text-shadow"
+    ],
+    "declaration-property-value-allowed-list": {
+      "border-radius": [
+        "0",
+        "var(--radius)"
+      ],
+      "/^font-family$/": [
+        "/^var\\(--font-/",
+        "inherit"
+      ],
+      "/^(background|background-image)$/": [
+        "/^(?!.*gradient)/"
+      ],
+      "box-shadow": [
+        "none",
+        "/^var\\(--shadow/"
+      ]
+    },
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "declaration-block-single-line-max-declarations": null,
+    "rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "shorthand-property-no-redundant-values": null,
+    "value-keyword-case": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "length-zero-no-unit": null,
+    "font-family-name-quotes": null,
+    "import-notation": null,
+    "media-feature-range-notation": null,
+    "property-no-vendor-prefix": null,
+    "selector-not-notation": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "keyframes-name-pattern": null,
+    "selector-pseudo-element-colon-notation": null,
+    "value-no-vendor-prefix": null,
+    "number-max-precision": null
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.astro"
+      ],
+      "customSyntax": "postcss-html"
+    },
+    {
+      "files": [
+        "src/styles/tokens.css"
+      ],
+      "rules": {
+        "color-no-hex": null,
+        "function-disallowed-list": null,
+        "declaration-property-value-allowed-list": null
+      }
+    },
+    {
+      "files": [
+        "src/styles/glass.css"
+      ],
+      "rules": {
+        "function-disallowed-list": null,
+        "declaration-property-value-allowed-list": null
+      }
+    },
+    {
+      "files": [
+        "src/styles/folio.css"
+      ],
+      "rules": {
+        "function-disallowed-list": null,
+        "property-disallowed-list": null,
+        "declaration-property-value-allowed-list": null
+      }
+    }
+  ]
+}

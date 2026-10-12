@@ -1,0 +1,7 @@
+# Sealed (spoiler) blocks, decoration and the glass overlay never reach the search index.
+site: dist
+exclude_selectors:
+  - ".seal"
+  - "[aria-hidden='true']"
+  - ".glass"
+  - ".depth"

@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import BustCanvas from '../../components/BustCanvas';
+import StatRose from '../../components/StatRose.astro';
+import Plate from '../../components/Plate.astro';
+import { findImage } from '../../lib/images';
+import { getCollection, render } from 'astro:content';
+import { safeForMetadata } from '../../lib/spoilers';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('people')).sort((a, b) => a.data.number - b.data.number);
+  // Each file links to its neighbours in the series, like the next folder in a drawer.
+  return all.map((entry, i) => ({ params: { slug: entry.id }, props: { entry, prev: all[i - 1], next: all[i + 1] } }));
+}
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+// Sealed files never leak into <title>/description.
+const description = safeForMetadata(d.spoilerLevel) ? d.summary : 'A sealed file.';
+const stats = d.stats ? Object.entries(d.stats) : [];
+// The curated portrait (public/images/person-<id>-portrait.*) replaces the low-poly bust when it exists.
+const ref = (await findImage(`person-${entry.id}-portrait`))?.src;
+const b = d.battle;
+---
+<Base title={d.name} description={description} current="/people">
+  <article class="page ed">
+    <p class="mono"><a href="/people">Register of persons</a></p>
+    <div class="hero-file">
+      <figure style="margin:0">
+        <div class="portrait mount">
+          <div class="frame">
+            <img src={ref ?? `/world/busts/${entry.id}.png`} width="160" height="200" alt={`Portrait of ${d.name}`} />
+            {!ref && <BustCanvas client:visible slug={entry.id} />}
+          </div>
+        </div>
+        <figcaption>{ref ? 'Art from the game' : 'Drawn for this archive'}</figcaption>
+      </figure>
+      <div>
+        <h1>{d.name}</h1>
+        <p class="mono">{d.roles}{d.age ? ` · Age ${d.age}` : ''}</p>
+        {d.archetype && <p><em>{d.archetype}.</em></p>}
+        <p>{d.summary}</p>
+      </div>
+    </div>
+    {stats.length > 0 && (
+      <section>
+        <h2>Attributes</h2>
+        <div class="stats-row">
+          <StatRose stats={d.stats ?? {}} name={d.name} />
+          {d.statsNote && <p class="note-inline">{d.statsNote}</p>}
+        </div>
+      </section>
+    )}
+
+    <Plate slot={`person-${entry.id}-art`} />
+    <hr class="rule" />
+    <div class="prose"><Content /></div>
+
+    {(b || d.designNote) && (
+      <section class="guide">
+        <hr class="rule" />
+        {b && (
+          <>
+            <h2>Battle guide</h2>
+            {b.strengths.length > 0 && <><h3>Strengths</h3><ul>{b.strengths.map((t) => <li>{t}</li>)}</ul></>}
+            {b.weaknesses.length > 0 && <><h3>Weaknesses</h3><ul>{b.weaknesses.map((t) => <li>{t}</li>)}</ul></>}
+            {b.gear.length > 0 && <><h3>Weapons and gear</h3><ul>{b.gear.map((t) => <li>{t}</li>)}</ul></>}
+            {b.magic.length > 0 && <><h3>Magic and skills</h3><ul>{b.magic.map((t) => <li>{t}</li>)}</ul></>}
+            {b.tips.length > 0 && <><h3>How to use them</h3><ol>{b.tips.map((t) => <li>{t}</li>)}</ol></>}
+          </>
+        )}
+        {d.designNote && <><h2>How they were conceived</h2><p>{d.designNote}</p></>}
+      </section>
+    )}
+
+
+    <hr class="rule" />
+    <p class="mono">SPOILER LEVEL: {d.spoilerLevel.toUpperCase()}</p>
+    <nav class="next mono" aria-label="Series B">
+      {prev ? <a href={`/people/${prev.id}`}>← {prev.data.name}</a> : <span />}
+      {next ? <a href={`/people/${next.id}`}>{next.data.name} →</a> : <a href="/people">Register of persons →</a>}
+    </nav>
+  </article>
+</Base>

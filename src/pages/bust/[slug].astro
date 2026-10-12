@@ -1,0 +1,20 @@
+---
+// Render source for the pre-rendered portraits (scripts/render-busts.mjs). Not linked, not indexed.
+import '../../styles/tokens.css';
+import { BUST_SLUGS } from '../../world/bust';
+export function getStaticPaths() { return BUST_SLUGS.map((slug) => ({ params: { slug } })); }
+const { slug } = Astro.params;
+---
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="robots" content="noindex" /><title>bust</title><style is:global>body{margin:0;background:var(--world-fog)}canvas{display:block;width:160px;height:200px}</style></head>
+  <body>
+    <canvas id="c" width="160" height="200"></canvas>
+    <script define:vars={{ slug }}>window.__slug = slug;</script>
+    <script>
+      import { createBust } from '../../world/bust';
+      createBust(document.getElementById('c') as HTMLCanvasElement, (window as unknown as { __slug: string }).__slug, { still: true });
+      document.body.dataset.ready = 'true';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+---
+interface Props { level: 'story' | 'endings'; }
+const { level } = Astro.props;
+const label = level === 'story' ? '[SEALED — story spoilers]' : '[SEALED — the endings]';
+---
+<!-- Native <details>: the seal works without JavaScript. -->
+<details class="seal" data-level={level}>
+  <summary>{label}</summary>
+  <div><slot /></div>
+</details>

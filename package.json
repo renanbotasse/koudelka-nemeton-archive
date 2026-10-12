@@ -1,0 +1,44 @@
+{
+  "name": "koudelka-nemeton-archive",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "check": "astro check && npm run lint:css && vitest run",
+    "lint:css": "stylelint \"src/**/*.{css,astro}\""
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^8.0.3",
+    "@astrojs/solid-js": "^7.0.2",
+    "@fontsource-variable/cinzel": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource/cinzel-decorative": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/im-fell-english": "^5.3.0",
+    "@fontsource/pinyon-script": "^5.3.0",
+    "@fontsource/unifrakturcook": "^5.3.0",
+    "@types/three": "^0.186.0",
+    "astro": "^7.3.7",
+    "solid-js": "1.9",
+    "three": "^0.186.1",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "pagefind": "1.5",
+    "playwright-core": "^1.64.0",
+    "postcss-html": "^1.8.1",
+    "sharp": "^0.35.5",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

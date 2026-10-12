@@ -1,0 +1,39 @@
+---
+import { STAT_NAMES, STAT_ORDER, listNames, strongestNames, weakestNames } from '../lib/stats';
+interface Props { stats: Record<string, number>; name: string; }
+const { stats, name } = Astro.props;
+// An engraved rose window instead of a chart: eight spokes, three rings, and the character's reach inked in.
+const R = 100; const C = 150; const rings = [1 / 3, 2 / 3, 1];
+const angle = (i: number): number => -Math.PI / 2 + (i * Math.PI * 2) / 8;
+const pt = (i: number, f: number): [number, number] => [C + Math.cos(angle(i)) * R * f, C + Math.sin(angle(i)) * R * f];
+const known = (k: string): boolean => k in stats;
+const shape = STAT_ORDER.map((k, i) => pt(i, Math.max(0.08, (stats[k] ?? 0) / 3))).map((p) => p.map((n) => n.toFixed(1)).join(',')).join(' ');
+const strong = strongestNames(stats); const weak = weakestNames(stats);
+const romans = ['I', 'II', 'III'];
+---
+<figure class="rose">
+  <svg viewBox="0 0 300 300" role="img" aria-labelledby={`rose-${name}`}>
+    <title id={`rose-${name}`}>{`Attributes of ${name}: strongest in ${listNames(strong)}${weak.length ? `; weakest in ${listNames(weak)}` : ''}.`}</title>
+    <defs>
+      <pattern id="rose-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1.4" /></pattern>
+    </defs>
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      {rings.map((f) => <circle cx={C} cy={C} r={R * f} />)}
+      <circle cx={C} cy={C} r={R + 10} stroke-width="2.4" />
+      {STAT_ORDER.map((_, i) => <line x1={C} y1={C} x2={pt(i, 1)[0]} y2={pt(i, 1)[1]} />)}
+      {STAT_ORDER.map((_, i) => { const [x, y] = pt(i, 1); const [a, b] = pt((i + 1) % 8, 1); return <path d={`M ${x} ${y} Q ${C + (x + a - 2 * C) * 0.62 + (C - C)} ${C + (y + b - 2 * C) * 0.62} ${a} ${b}`} stroke-width="0.8" />; })}
+    </g>
+    <polygon points={shape} fill="url(#rose-hatch)" stroke="var(--wax)" stroke-width="2.6" stroke-linejoin="round" style="color:var(--wax)" />
+    {STAT_ORDER.map((k, i) => { const [x, y] = pt(i, Math.max(0.08, (stats[k] ?? 0) / 3)); return known(k) ? <path d={`M ${x} ${y - 5} L ${x + 4} ${y} L ${x} ${y + 5} L ${x - 4} ${y} Z`} fill="var(--wax)" stroke="none" /> : null; })}
+    <g font-family="Cinzel Variable, serif" fill="currentColor" stroke="none" text-anchor="middle">
+      {STAT_ORDER.map((k, i) => { const [x, y] = pt(i, 1.27); return <text x={x} y={y + 4} font-size="13" font-weight="600" letter-spacing="1.5" opacity={known(k) ? 1 : 0.42}>{k}</text>; })}
+      {rings.map((f, i) => <text x={C + 4} y={C - R * f + 11} font-size="8" text-anchor="start" opacity="0.7">{romans[i]}</text>)}
+    </g>
+    <path d={`M ${C} ${C - 9} v18 M ${C - 9} ${C} h18`} stroke="currentColor" stroke-width="2" />
+  </svg>
+  <figcaption>
+    <span class="script">{`Strongest in ${listNames(strong)}.`}</span>
+    {weak.length > 0 && <span class="script">{`Weakest in ${listNames(weak)}.`}</span>}
+  </figcaption>
+  <ul class="sr-only">{STAT_ORDER.filter(known).map((k) => <li>{STAT_NAMES[k]}: {stats[k]} of 3</li>)}</ul>
+</figure>
