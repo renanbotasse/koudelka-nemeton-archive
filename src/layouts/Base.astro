@@ -1,0 +1,67 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/folio.css';
+import '../styles/editorial.css';
+import '../styles/glass.css';
+import { findImage } from '../lib/images';
+
+interface Props { title: string; description?: string; dark?: boolean; current?: string; /** false keeps a page out of the search index. */ index?: boolean; }
+const { title, description = 'A non-commercial fan archive exploring the world, characters, sound and legacy of Sacnoth’s Koudelka.', dark = false, current = '', index = true } = Astro.props;
+const share = (await findImage('og-image'))?.src ?? '/og.png';
+const nav = [
+  ['WALKTHROUGH', '/walkthrough'], ['PEOPLE', '/people'], ['STORY', '/story'], ['DESIGN', '/design'], ['ARCHIVE', '/archive'],
+] as const;
+---
+<!doctype html>
+<html lang="en" data-mode="archive" class={dark ? 'dark' : ''}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === 'Koudelka: The Nemeton Archive' ? title : `${title} · Koudelka: The Nemeton Archive`}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#090d0e" />
+    <!-- One spoiler-free share image for every page; descriptions come from safe summaries only. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Koudelka: The Nemeton Archive" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(share, Astro.site ?? Astro.url).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Archive mode and motion always on. -->
+    <script is:inline>
+      try {
+        document.documentElement.dataset.mode = 'archive';
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.dataset.motion = 'off';
+      } catch (e) {}
+    </script>
+  </head>
+  <body class={dark ? 'dark' : ''}>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Koudelka: The Nemeton Archive">
+        KOUDELKA
+        <img class="psone" src="/favicon.png" width="22" height="22" alt="" />
+      </a>
+      <nav aria-label="Main">
+        {nav.map(([label, href]) => <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>)}
+      </nav>
+    </header>
+    <main id="main" {...(index ? { 'data-pagefind-body': '' } : {})}><slot /></main>
+    <nav class="bottombar" aria-label="Main (mobile)">
+      {nav.map(([label, href]) => <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>)}
+    </nav>
+    <div class="glass" aria-hidden="true"></div>
+    <script>
+      // On a phone the tables stack; each cell then carries its column label.
+      document.querySelectorAll<HTMLTableElement>('.tbl').forEach((t) => {
+        const heads = Array.from(t.querySelectorAll('thead th')).map((h) => h.textContent?.trim() ?? '');
+        if (!heads.length) return;
+        t.querySelectorAll('tbody tr').forEach((r) => Array.from(r.children).forEach((c, i) => { if (c.tagName === 'TD' && heads[i]) c.setAttribute('data-label', heads[i]); }));
+      });
+    </script>
+  </body>
+</html>

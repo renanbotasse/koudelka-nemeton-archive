@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import { defaultCredit, findImage } from '../lib/images';
+
+interface Props { slot: string; caption?: string; class?: string; }
+const { slot, caption, class: extra = '' } = Astro.props;
+const entry = (await getCollection('images')).find((i) => i.id === slot);
+const img = await findImage(slot);
+const d = entry?.data;
+// Portraits and covers are cropped to the slot's shape; heroes and art keep the picture's own proportions.
+const crop = ['4:5', '1:1', '2:3'].includes(d?.ratio ?? '');
+const ratio = crop || !img ? (d?.ratio ?? '16:9').replace(':', ' / ') : `${img.width} / ${img.height}`;
+const label = caption ?? d?.title ?? '';
+const credit = d?.credit || defaultCredit(d?.kind ?? 'official');
+---
+{img && (
+  <figure class={`pic ${extra}`}>
+    <span class="pic-frame"><img src={img.src} width={img.width} height={img.height} alt={label} loading="lazy" style={`aspect-ratio:${ratio}`} /></span>
+    <figcaption><span>{label}</span> <small>{credit}</small></figcaption>
+  </figure>
+)}

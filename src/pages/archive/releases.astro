@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Plate from '../../components/Plate.astro';
+const timeline = [
+  ['30 Apr 1997', 'Hiroki Kikuta founds Sacnoth with funding from SNK.', 'HIGH (year)'],
+  ['Jan 1998', 'Motion-capture sessions in Santa Monica.', 'MEDIUM'],
+  ['Mar 1998', 'First sketches of Koudelka by Yūji Iwahara.', 'MEDIUM'],
+  ['Sep 1999', 'The game is formally revealed, with SNK as publisher.', 'MEDIUM'],
+  ['27 Aug 1999', 'Live versions of three battle themes are recorded at Zepp Tokyo.', 'HIGH'],
+  ['1 Dec 1999', 'Koudelka Original Soundtrack (Pony Canyon, PCCB-00396).', 'HIGH'],
+  ['16 Dec 1999', 'Japanese release, four discs, published by SNK. Dialogue entirely in English.', 'HIGH'],
+  ['Jan 2000', 'Aruze acquires SNK.', 'MEDIUM'],
+  ['29 Jun 2000', 'North American release by Infogrames. Rated M by the ESRB.', 'HIGH'],
+  ['Late Sep 2000', 'European release by Infogrames (27 September in one source, 29 September in another).', 'MEDIUM'],
+  ['Mar 2001', 'Kikuta, who has stepped down as CEO, founds the label Norstrilia.', 'MEDIUM'],
+  ['2001', 'Shadow Hearts (PS2) continues the story.', 'HIGH'],
+  ['Nov 2002', 'Aruze absorbs Sacnoth, renamed Nautilus.', 'MEDIUM'],
+  ['2004 / 2005', 'Shadow Hearts: Covenant and Shadow Hearts: From the New World.', 'HIGH'],
+  ['2007', 'Nautilus is folded into Aruze and stops making games.', 'MEDIUM'],
+  ['7 Jul 2015', 'A PC port is announced by Console Classics. It never ships.', 'MEDIUM'],
+  ['2022', 'A trademark is filed for Shadow Hearts; Matsuzo Machida crowdfunds Penny Blood.', 'HIGH'],
+  ['16 Dec 2024', '25 years since the Japanese release. No official celebration found.', 'HIGH (date)'],
+];
+---
+<Base title="Release history" current="/archive" description="Releases, discs and a timeline from 1997 to 2026.">
+  <div class="page ed">
+    <p class="mono"><a href="/archive">The vault</a> · Release history</p>
+    <h1>Release history</h1>
+    <div class="pics-grid pics-covers"><Plate slot="release-jp-cover" /><Plate slot="release-na-cover" /><Plate slot="release-eu-cover" /></div>
+    <table class="tbl">
+      <thead><tr><th scope="col">Region</th><th scope="col">Date</th><th scope="col">Publisher</th><th scope="col">Discs</th></tr></thead>
+      <tbody>
+        <tr><td>Japan</td><td>16 Dec 1999</td><td>SNK</td><td>4</td></tr>
+        <tr><td>North America</td><td>29 Jun 2000</td><td>Infogrames</td><td>4</td></tr>
+        <tr><td>Europe</td><td>27 or 29 Sep 2000</td><td>Infogrames</td><td>4</td></tr>
+      </tbody>
+    </table>
+    <p class="mono">North America: ESRB rating M (Mature 17+).</p>
+
+    <h2>Timeline</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">Date</th><th scope="col">Entry</th><th scope="col">Confidence</th></tr></thead>
+      <tbody>{timeline.map(([d, e, c]) => <tr><td>{d}</td><td>{e}</td><td>{c}</td></tr>)}</tbody>
+    </table>
+  </div>
+</Base>

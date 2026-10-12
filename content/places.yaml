@@ -1,0 +1,399 @@
+- id: gates-and-walls
+  name: Gates and Walls
+  order: 1
+  disc: 1
+  floor: "2"
+  layer: ground
+  spoilerLevel: none
+  summary: The locked front gate, the climb to the roof and the gatehouse above it.
+  what: "The first scene of the game. The main gate is locked, so Koudelka climbs the side of the wall to the roof, slips, and loses something on the way before dropping through a window. You come back here twice: to the gatehouse corridor with Edward and James, and later, in front of the gate itself."
+  route:
+    - "Opening: after the climb, you land inside the Stables. There is nothing to do on the wall itself."
+    - "Gatehouse: the corridor above the gate stays closed until James has joined the party. When you open it, you are shot at and attacked."
+    - "Exit: the door at the end of the corridor leads down towards the Dungeon."
+    - Later in the game the main gate is still locked. A statue beside it holds one of the best swords.
+  items:
+    - Tornado Spell (from the idol trio), a Tabar axe, a Rapier and a Jade Ring. Element and bonuses are randomised per game.
+  foes: "Boss: a trio of idols (the Viewer Trio in the print guide, Seeker Trio elsewhere). Blue: weak to fire and to firearms. Red: weak to water (Geyser) and the strongest of the three. Green: weak to earth, which you do not have yet, so use physical hits. They all aim their magic at Koudelka, so keep healing. A hard fight for this point: be persistent, and win to get Tornado."
+  tip: "Let James take the healer role: he has plenty of MP. Corridor scene before the fight: the caretakers shoot through the window, and James and Edward start arguing."
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - dantas-guide
+    - print-guide
+- id: stables
+  name: The Stables
+  order: 2
+  disc: 1
+  floor: "1"
+  layer: ground
+  spoilerLevel: none
+  summary: Hay, rafters and the first fight of the game.
+  what: The first room you control. Koudelka drops in through the rafters and finds Edward hurt and facing a beast. This is where combat is taught, on a grid.
+  route:
+    - You start in the attic of a hay store with a wounded man. After the first fight he throws you his pistol, and he joins you.
+    - "Leave the room and take the Potion on the floor. Of the two doors, one is locked: take the other, to the south."
+    - Climb the stairs on the left for a box of 20 pistol rounds, then the wooden ladder to the attic, where the Monastery Map lies on a barrel (open it from the Map entry of the main menu). A Bread is on the table at the back.
+    - "Back downstairs, go through the right-hand door and examine the painting: a Dirk is hidden behind it. Equip it on Edward."
+    - "Tip from the guide: give Edward the knife and let Koudelka carry the pistol. He fights better with it, and she is the one who stays back."
+  items:
+    - "Monastery Map (attic barrel): the game does not point at it, so it is easy to miss."
+    - Pistol (thrown to you), Potion, 20 pistol rounds, Bread, Dirk (behind the painting). Flare Spell is the reward for the first fight.
+  foes: "Boss: a werewolf. Three revolver shots are enough."
+  tip: "Pistol ammunition is limited, so think twice before shooting everything. Save often: some early monsters can end the party in a few turns."
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - dantas-guide
+- id: caretakers-quarters
+  name: The Caretakers' Quarters
+  order: 3
+  disc: 1
+  floor: "1"
+  layer: ground
+  spoilerLevel: none
+  summary: A warm dinner, a kitchen, a garden and the other guest.
+  what: "The living quarters of the old couple who keep the house: a dining room, kitchen, toolroom, well and herb garden. You eat, you are offered ammunition, and then things stop being friendly. James joins the party in the garden."
+  route:
+    - "Dining room: dinner with the hosts. The first door in the corridor."
+    - Kitchen, then the well (with a Panacea) or the toolroom (a hammer and a pipe).
+    - "Herb Garden: a plant boss, then the first permanent save point. James is unconscious here; talk to him to recruit him."
+    - The corridor on the second floor leads to the gatehouse.
+    - "Return later with the Red Key: the locked back rooms hold a key doll, a statue and a mask."
+    - "Dinner is a scene: the caretaker tells the house history (a bishop of the 17th century built it, dabbled in forbidden necromancy, and the Vatican later covered it with a monastery) and gives you 20 pistol rounds."
+    - "In the kitchen a scene shows how the soup was poisoned. Take the Knife and the Cheese, then go out the back door to the yard: Panacea lie on a stone at the far end, and the well glows."
+    - In the toolroom take 2 Listel, the Hammer and the Pipe, then enter the greenhouse and the small garden to meet the boss.
+    - "After the fight the fallen man is alive: he is the bishop James O’Flaherty, sent on a secret Vatican errand, and he joins you. Edward purifies the little fountain, which then restores HP and MP and works as a save point."
+    - "On the return visit with the Red Key: the Living Room gives a Dragon Statue (on the table), a Badge (in the wardrobe) and rifle ammunition (on the shelf). In the Lumber Room, a painting triggers a short scene, the Valna Doll lies on the table, and the Mask is to the right."
+  items:
+    - "Geyser Spell: reward from the garden boss."
+    - "Icon's Necklace: a key item for a puzzle in the courtyard much later. Keep it."
+    - "On the return visit: Rifle Rounds, Badge, Dragon Statue, Valna's Doll, Mask (lowers random encounters while carried)."
+    - "Herb Garden total: 20 pistol rounds, Knife, Cheese, Panacea, 2 Listel, Hammer, Pipe, and Icon’s Necklace (key item) from the boss."
+  foes: "Boss: Giant Plant (the print guide calls it a Tree Demon). Put Edward directly in front of it, because attacks from the sides make it guard. Koudelka burns it with Flare while Edward cuts it with a sharp blade. It has a lot of HP and can poison the party, so be patient. In the corridor afterwards, an Evil Balloon can appear: it is far too strong for now."
+  puzzle: None.
+  tip: "In a corridor later, a monster called Evil Balloon can appear. It casts a wind spell that costs everyone 100+ HP and cannot be beaten yet: ignore it and come back stronger."
+  sealed: The meal is not what it seems. Fight and flee accordingly.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - dantas-guide
+    - print-guide
+- id: prison
+  name: The Dungeon and the Prison
+  order: 4
+  disc: 1
+  floor: "0"
+  layer: below
+  spoilerLevel: none
+  summary: Bone rooms, a red room, and a floor that gives way.
+  what: "The cells under the house, in two parts: the upper dungeon (a body store, a chest room, the red room and a priest’s quarters) and the prison proper, reached by falling through the floor at the end of the first disc. You come back once more, much later, with something owed."
+  route:
+    - "Upper dungeon: past the first scene you see a ghost girl run off. Examine the drop to find a lit room below (the one seen from the well)."
+    - "The first room is a store of bodies: take 2 Listel. The next room has a chest that needs a code, so leave it for later. The room beside it triggers a long scene in which the dead of the prison speak through Koudelka."
+    - "Examine the cupboard: the body inside rises and attacks. After the fight, open the cupboard again for the Rope Ladder and use it on the drop."
+    - "Downstairs: take 20 pistol rounds and 3 Dried Food from the body at the end of the corridor, then go through the left door for the Red Glass Part and the stained glass window, which starts the hardest fight so far."
+    - Examine the window with the Red Glass Part to read a number combination, and write it down. Back in the chest room, enter it to get the Guard’s Diary. Read it, then drink at the sacred light to restore HP and MP.
+    - "Go through the door beside the little altar. The floor of the next storeroom gives way under the three of you and you fall into the prison: the end of the first disc."
+    - "Prison: take 20 pistol rounds and 9 Antidote from the rubble, then examine the bodies and the bars for a scene with a ghost child and a fight. A wall falls: take Knuckles from the floor and a Mace from the torture table. Do not take the key from the two zombies in the next room; they are unbeatable. Go south instead."
+    - "Disc 2 in the prison: the Nobleman’s ghost is the boss of the cell (Flare from Koudelka and James, a weapon for Edward). With good skill levels it takes about five minutes. Afterwards a wall falls. In the torture room take the Knuckles and the Mace, then find the two dolls, Valna and Vigna, with a Green Key between them. Later, bring back the two dolls to get that key (and throw the key away once used)."
+  items:
+    - "Dungeon: 2 Listel (twice), 20 pistol rounds (twice), 3 Dried Food, a Ring, a High Potion, 7 Panacea."
+    - "Key items: Rope Ladder, Icon’s Earring (from the three-ghost fight), Red Glass Part, Guard’s Diary."
+    - "Prison: 20 pistol rounds, 9 Antidote, a Ring, a Mace, Knuckles."
+  foes: "Bosses in order: Mummy Bride (about 1,200–1,500 HP; weak to light, resists dark; resists physical and magic; her dark spell can cause Silence; Heal is the best weapon and Listel does not work). Then the three phantom copies of the party (the Doppelgänger Trio): the guide gives about 800 HP for the false Koudelka, 1,500 for Edward and 1,000 for James. Kill the false Koudelka first with your best magic, keep Edward in front, and watch for their spells on your own Edward. In the prison: a ghost cutthroat (about 1,200 HP, fast, and it prefers spells; magic is the best answer)."
+  puzzle: The chest code is 7038 in the print guide and on the wiki. One web guide says it changes between games, so check it against what the stained glass shows you after using the Red Glass Part.
+  tip: The two zombies who hold the prison key are far too strong. Leave them alone for now.
+  sealed: The Guard’s Diary is a guard’s journal from 1716. The prison was built in 1632 by the Vatican for the Inquisition, and later served the powerful. About eight thousand people died there. He describes the interrogations, a girl imprisoned in her wedding dress and then shut in a cupboard as a warning, and the night in November when armed men attacked the monastery and the prisoners rose. It ends with the guard opening his door to the rebels.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - dantas-guide
+    - print-guide
+- id: underground-shrine
+  name: The Underground Shrine
+  order: 5
+  disc: 2
+  floor: "0"
+  layer: below
+  spoilerLevel: none
+  summary: An acid pit, a hidden path and a giant insect.
+  what: "Where the priests came to whip themselves in penance for what they did in God’s name. It is soaked in malice, so expect hard monsters. A tiny area: take the rifle rounds by the entrance, then enter the left room and climb the steps to meet the boss."
+  route:
+    - Follow the hall to the tunnel and the acid pit. A tank to the right needs a bottle you do not yet have.
+    - Go back and run towards the camera to find the path to the boss room.
+    - After the fight the way opens towards the storage area.
+    - Late in the game you return with an empty bottle to collect acid.
+    - "Before the Shrine: the Underground Tunnel has a box with Whisky (it revives a knocked-out ally). The Acid Tank room has an acid tank you cannot use yet (you need a container), and a pair of blue doors that are destroyed. Walk back over the metal bridge and go left into the Shrine."
+  items:
+    - 20 rifle rounds (near the entrance). Icon’s Ring from the boss.
+    - Bottle of Acid (collected on the late return visit).
+    - Bowgun, Bowgun Arrows and Pistol Rounds in the treasure room beyond.
+  foes: "Boss: the Larval Human Fly (the Mad Fly of other guides, the “Guardian Priest” of a Portuguese web guide). About 3,000 HP, lots of MP, fast and hard-hitting. It is weak to earth: Koudelka and James stand back and cast Megalith while Edward keeps hitting it with a sharp weapon. Use High Listel to keep MP up, and gain a few levels first if it is too hard. It drops Icon’s Ring; afterwards use the Holy Fountain to save."
+  puzzle: The acid tank needs the empty bottle from the master's rooms.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - dantas-guide
+    - print-guide
+- id: storage-room
+  name: The Storage Room
+  order: 6
+  disc: 2
+  floor: "1"
+  layer: ground
+  spoilerLevel: story
+  summary: Centuries of confiscated things, stacked and forgotten.
+  what: "Behind a locked door lies everything the house ever took from anyone: crates, art, a holy-water font, a thief's den and a puzzle floor."
+  route:
+    - Take the bow gun, arrows and ammunition; the Stone Tablet and the Lion Statue are in the upper corner.
+    - "Go up the stairs and look at the plastered wall: after the font boss, water breaks it and frees the Goat Statue."
+    - "Store Room: a chandelier falls. Take Daniel's Arm near it, then fight the thief on the balcony."
+    - "His den opens with the Red Key you get from him. Inside: a music box, nuts, ammunition."
+    - "The puzzle room: symbol floor (see below), and Shotgun Shells."
+    - "Print-guide order for the warehouse: on the back wall take the Stone Tablet, then at the table the Lion Statue and a Letter hidden inside a teddy bear. Read the magic symbols on the wall near the stairs and take the High Listel. Train Tornado to level 3 before the shrine fight."
+    - "The Dark Young (about 3,000 HP) waits at the shrine: James and Koudelka stay back casting Tornado, Edward stands in front with an axe. Its reward is the Evil Horn; then use the Holy Water Font to save."
+    - "Warehouse, second visit: a chandelier falls, and St. Daniel’s Arm lies beside it. On the upper floor a man with a gun fires at you: use Edward’s axe to clear the obstacles in his way while Koudelka and James help with weapons (not magic). Three hits finish him. He leaves a Brown Glass and a Red Key."
+    - "In his hideaway take the Music Box (upper left) and read the symbols carved on the crates. The Showroom door then needs a floor puzzle: step first on the red symbols that were marked on the box. One path runs from the triangle to the symbol IV, a second from the jug-shaped symbol to the circle with a cross, and every icon must be touched."
+  items:
+    - "Daniel's Arm: a key item you need at the very end. Keep it."
+    - Stone Tablet (leads to a printing press and the full map), Lion and Goat Statues, Old Letter (hides the answer to the final organ puzzle), Evil Horn (special spear).
+    - Red Key (opens the caretakers' back rooms and the den), DA Pistol, Bow Gun.
+  foes: "Bosses: Dark Young (weak to wind; it casts Silence on all of you, so bring a Panacea) and the thief (magic always misses him; he shoots from a distance)."
+  puzzle: "The symbol floor, as one play-through solved it: triangle, glass, flask, Roman four, flask, round flask, pitchfork, eye, Mercury symbol."
+  sealed: The thief does not leave this room. Edward decides that.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: library
+  name: The Library and the Hidden Room
+  order: 7
+  disc: 2
+  floor: "1"
+  layer: ground
+  spoilerLevel: none
+  summary: A printing press, an archive and a coffin behind the books.
+  what: A two-storey library with an office, a safe room, a printing press and, past a hidden door, a coffin. The Archives next door are reached through three statues.
+  route:
+    - "Office (upstairs): a stained-glass fragment and a locked safe."
+    - "Ground floor: a giant pendulum clock. In the back, use the Stone Tablet on the small press to print the full map."
+    - "Wine storage: another fragment, and the door that takes the three statues (goat, lion, dragon) into the Archives."
+    - "Archives: a boss fight, then a permanent save."
+    - "Use the Relief Piece from the nave on the clock: it opens the music-puzzle room and then the hidden room."
+    - "Library office (upstairs): take the Ochre Glass from the table. Study: Rifle Rounds near the clock and a High Potion near the shelves. Printing Room: a scene shows Elaine appearing for the first time (her voice is the one that called Koudelka). Place the Stone Tablet on the paintings and the wall falls, revealing a new map. Secret passage: the record on top of the gramophone and Bowgun Arrows."
+    - "Wine cellar: Rifle Rounds and the Blue Glass Part. Put the Lion, Goat and Dragon statues into the holes of the door to open the Archives."
+    - "Archives: touch the statue on the left wall to start the Chimera (about 4,000 HP). Geyser from Koudelka and James, a rifle from Edward. It drops Icon’s Crown (printed “Icon’s Crow” in the guide)."
+    - "Music-puzzle room (Angel Room): the music box plays, and you repeat it by stepping on the symbols in order: right, left, top, bottom. Afterwards you leave the music box behind. In the next room Roger Bacon appears, and you take the Green Glass Part."
+  items:
+    - Full Map of Nemeton (printing press).
+    - Icon's Crown and the Disk (a record for the master's gramophone, much later).
+    - Sophia's Letters, from the safe room. Optional, and they change one scene later.
+    - "Glass Parts: five fragments for the nave window. Sources disagree on which room gives which."
+  foes: "Boss: Chimera (weak to water; its head attacks can poison, silence or paralyse)."
+  puzzle: "Music puzzle: start on the blue Earth symbol, cross Mercury, go to pale-orange Venus, up to red Mars, cross Mercury again and finish on the orange Moon or Sun. If you slip, step on Mercury to reset."
+  sealed: The coffin occupant knows what the book is.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: church-nave
+  name: The Church Nave
+  order: 8
+  disc: 2
+  floor: "1"
+  layer: ground
+  spoilerLevel: none
+  summary: A stained-glass room, a long hall and the stroke of midnight.
+  what: The old monastery's church, reached through a triangular hall. The second disc ends here, at the twelfth stroke, with a fight you cannot win.
+  route:
+    - A Minotaur guards the Relief Piece in the centre; take it.
+    - "Stained Glass Room: put in the fragments. One piece is missing and comes from the hidden room in the library."
+    - Once the window is restored the nave door opens and the library safe unlocks.
+    - "In the front of the nave, pick up Shotgun 2 from the body on the right: it is lost for good if you leave."
+    - "At the portal a monster appears. Do not fight: run (press O)."
+    - "Stained Glass Room (left nave): fit all the glass fragments into the window. A door opens, and you get the combination for the library safe (Sophia’s Letters)."
+    - "In the nave a huge plant blocks the way to the sanctuary. Watch the scene, and do not fight: run (press O). Koudelka ends up alone; save and the game asks for the third disc."
+  items:
+    - Relief Piece (key item), Shotgun 2 (missable).
+    - A rosary drops from the Chikon enemies here.
+  foes: "Forced boss: the Gargoyle, unwinnable now. Escape. It returns later as an optional super-boss."
+  puzzle: The window code (θυσία, “sacrifice”) enters itself.
+  tip: This is the only disc break that can be dated for certain.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - wp-koudelka
+    - print-guide
+- id: inner-grounds
+  name: The Inner Grounds
+  order: 9
+  disc: 3
+  floor: "1"
+  layer: ground
+  spoilerLevel: none
+  summary: A garden, four statues, a fountain and the way down.
+  what: Koudelka, alone, in the walled garden. A fountain at the back doubles as a permanent save. To the east is the locked main gate, and beside it a statue holding a famous sword.
+  route:
+    - "Place the four jewels on the four statues of women: the Ring on the first one you reach, the Necklace on the one at the end of the garden, the Earring on the statue to the left of where you came in, and the Crown on the last one, by the fountain."
+    - "Go up the steps on the right of the fountain and save permanently before the last jewel: when it goes on, the fountain stops working for good."
+    - Take the Pendant from the dry fountain. The game cannot be finished without it.
+    - "Through the door to the right of the fountain take a High Listel. Then enter the small building on the other side of the fountain: a door lies under the water."
+  items:
+    - "Koudelka's Pendant: the game cannot be finished well without it."
+    - Rifle Rounds, High Listel, High Potion.
+    - "Sacnoth Sword: later, as the reward for the super-boss."
+  foes: Giants (6000+ HP; weak to wind), Brutes (paralysis). Keep Koudelka in the back row, because she is alone.
+  tip: Check your inventory for the pendant before going on.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: underground-passage
+  name: The Underground Passage
+  order: 10
+  disc: 3
+  floor: "0"
+  layer: below
+  spoilerLevel: story
+  summary: A punishment room, a fountain cavern and a hidden altar.
+  what: Under the central building lies a room of punishment, a guillotine and a series of passages that lead out to the graveyard.
+  route:
+    - "Down the stairs to the punishment room: a long scene, then a Rifle and the Blue Key (it opens the master's quarters)."
+    - "The fountain cavern: a boss fight, then a permanent save."
+    - "Take the Bottle of Blood from the bleeding wall near the rack and throw it at the statue in the corridor: a path opens to the Altar of Darkness."
+    - Follow the corridors out to the graveyard.
+    - "In the guillotine room take Pistol Rounds from the back, then go down to the basement. After the scene, take the Rifle RD and the Blue Key, then the Rifle Rounds and the Bottle of Blood from the altar above. A locked door shows Edward on the other side: you agree to meet in the library."
+    - "The Gug fight (about 5,000 HP, Koudelka alone): equip the Evil Horn, the Air Badge and a brooch, and bring both Tornado spells to level 3. When it falls the water flows again and you can save."
+    - Give the Bottle of Blood to the statue on the left wall of the corridor. In the Altar of Darkness a creature gives you 16 hints over several visits. Take the Roman Nuts in the corridor and leave by the stairs, which come out in the graveyard.
+  items:
+    - Blue Key (key item), Bottle of Blood (key item), Rifle Rounds x2, Roman Nuts x2.
+  foes: "Boss: Gug (weak to wind; two or three Tornados)."
+  puzzle: Use the Bottle of Blood on the statue.
+  sealed: At the altar, a figure gives you one hint per visit.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: graveyard
+  name: The Graveyard
+  order: 11
+  disc: 3
+  floor: ""
+  layer: ground
+  spoilerLevel: none
+  summary: Leaning stones, and two names worth reading.
+  what: "An open stretch of graves outside the walls. Two stones matter: that of the monastery's founder, and a child's."
+  route:
+    - Leave the tunnel and pray at the child's grave. Take the doll from it.
+    - "Continue to the founder's grave. An old scholar is waiting: pray, and he opens the gate to the library."
+    - Go through the gate. The party is back together.
+    - "After the founder’s grave the scholar opens the triangular underground gate. Charlotte’s tomb is in a cavern full of stones at the entrance: pray there, and the guide says it spares you the later fight with her. Then go to the library, where the two companions are waiting, and open the office chest to read the letters inside."
+  items:
+    - Vigna's Doll (key item for the prison).
+    - Roman Nuts. In non-US versions, a cross behind the founder's grave.
+  foes: No boss. Stronger skeletons, wights and ghouls.
+  tip: Praying at the child's grave counts towards a better outcome later.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: charlottes-cell
+  name: Charlotte's Cell
+  order: 12
+  disc: 3
+  floor: "0"
+  layer: below
+  spoilerLevel: story
+  summary: The smallest cell, and the longest wait.
+  what: Reached with the Green Key from the prison. A room of cells, a stair, and the room where a child was kept.
+  route:
+    - Take the Green Key door, cross the cell room and climb the stairs.
+    - Her right door is held shut until a mini-boss of possessed furniture falls.
+    - A scene follows. The exit door then falls, and the corridor leads to the master's quarters.
+    - After the scene take the Flare Brooch from the middle of the room (if you spared her). In the passage that follows take Listel and Pistol Rounds from the pile of bodies, climb to the door and use the Blue Key (and throw the key away once used).
+  items:
+    - Flare Brooch (if you prayed at her grave and have the letters) or Star Brooch (if you fought her). Only one per game.
+    - Listel and Pistol Rounds (step on the pile of bodies).
+  foes: "Possessed furniture: the print guide gives about 400 HP per piece (another source says over 5,000 for the whole room). Megalith works on the shelves and Geyser on the chairs. Optional boss: Charlotte’s Wrath (water works best)."
+  sealed: Whether she is fought depends on a choice you made long before.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: patricks-quarters
+  name: Patrick's Quarters
+  order: 13
+  disc: 3
+  floor: "2"
+  layer: ground
+  spoilerLevel: story
+  summary: "The master's rooms: a laboratory, a library and a portrait."
+  what: "The owner's wing: a music room, a research library, a laboratory and a portrait room. It mixes old stone with new apparatus."
+  route:
+    - Entrance hall, then the hidden library.
+    - "Music room: use the Disk on the gramophone; a drawer opens with the Research Notes."
+    - "Portrait room (past the button statue): a boss fight and a long scene."
+    - "Laboratory and research library: the Memo, an Empty Bottle and a scale."
+    - "Hearth: the books hint at “Hestia”, so look at the fireplace for a hidden trapdoor."
+    - "Gramophone Room: place the record on the gramophone, and take the Research Notes from the wardrobe. Portrait Room: the Scapegoat boss (about 6,000 HP in this guide; fight with Edward close, James healing, Koudelka casting Flare). Its reward is Reflect."
+    - "Study upstairs: a paper with a dragon drawing hints at the secret passage next door; take the Shotgun Shells. Laboratory: Empty Bottle on the left shelves, Patrick’s Memo on the table at the back, Rifle Rounds around the table."
+    - "On the upper hallway, examine the statue on the wall: moving it reveals a hidden door to the Secret Library, where Roger is researching. Fill the Empty Bottle with acid at the Acid Tank, come back, and use the trapdoor beyond the laboratory shelves to reach the passage below. Take the Panacea there. A weighing door asks for 25 kg."
+  items:
+    - Research Notes, Reflect Spell (boss drop), Patrick's Memo, Empty Bottle (key item for the acid).
+    - Automatic Pistol, Shotgun Shells x2, Rifle Rounds, Roman Nuts, Antidote.
+  foes: "Boss: the Scapegoat (9,000+ HP, weak to fire; Edward holds the front)."
+  puzzle: "The scale asks for 70 kg: Koudelka is 45, so add 25 kg. Four dolls in the corridor: turn the first and fourth towards the centre."
+  sealed: The portrait is not a painting of someone absent.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: church-crypt
+  name: The Vestry and the Church
+  order: 14
+  disc: 4
+  floor: "2"
+  layer: below
+  spoilerLevel: story
+  summary: The vestry, a pipe organ, a crypt and a cauldron.
+  what: The last stretch before the tower. The vestry ends the third disc, and the church and crypt make up most of the fourth.
+  route:
+    - "Vestry ruins: take the Tinderbox, the Shotgun 6 and Shotgun Shells from the body, cross the bridge and take the door in the left wall."
+    - "Altar room: Roman Nuts and Pistol Rounds from the tables. The doll puzzle: of the six dolls, four can be moved. Press X to bring them forward until all four face inward, and a door opens on the left."
+    - "Pulpit room: Shotgun Shells, then the huge double doors. Through the door in the right wall of the hallway you reach the confessional: climb the altar at the back and light the candelabra with the Tinderbox to reveal the Lifedrinker sword. Give it to Edward."
+    - "Prepare for the next door: the guide suggests magic at level 3 for Koudelka with INT, MND and PIE above 60, Edward with Lifedrinker and STR around 80, and James with level 2 magic. Chapel: the Apostle (about 9,000 HP). Edward in front, James and Koudelka behind with Geyser and healing. Do not attack while it moves: use that time to heal. Save afterwards."
+    - "The sanctuary door is locked: James prepares nitroglycerin and the game asks for disc 4. In the disc-4 hall you may choose: first fight the optional Gargoyle (a very hard fight; Reflect and lots of healing; its reward, the Sacnoth Blade, is on the statue near the main gate), or go to the gates and blow them up."
+    - "Church: climb to the pipe organ and press the keys in the order Secret, Pain, People, Light (the Old Letter gives it away). A hidden door opens in the altar, and beyond it is the crypt and the cauldron. Throw Daniel’s Arm in: it is a point of no return."
+  items:
+    - Tinderbox (consumed), Shotgun 6, Shotgun Shells x2, Roman Nuts, Lifedrinker, Crossbow.
+  foes: "Apostle (about 9,000 HP): physical attacks strengthen it, and magic cast while it trembles only heals it. Cast Reflect on the whole party, hit it with magic in its dance periods, and use Edward and Lifedrinker for the rest. Optional Gargoyle: the print guide gives about 10,000 HP; other sources give very different numbers. Use Geyser repeatedly with Koudelka, keep Edward and James alive, and use Reflect."
+  puzzle: "Dolls: turn the first and fourth to open the gate. Organ: Secret, Pain, People, Light."
+  sealed: The roots below the church are the plan, not an accident.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide
+- id: bell-tower
+  name: The Bell Tower
+  order: 15
+  disc: 4
+  floor: "3"
+  layer: tower
+  spoilerLevel: endings
+  summary: The highest room in Nemeton.
+  what: The climb to the bell tower and the end of the story.
+  route:
+    - "Climb the outer spire. On the second floor the Tree of Life attacks: use Flare and fire weapons, with Edward on the shotgun. Each tentacle has about 8,000 HP but goes down quickly. On the way you find the AGL Idol (give it to Koudelka), the INT Idol (James) and the STR Idol (Edward)."
+    - A hidden save point is behind small vertical spirals. If you have the Pendant you pass; if not, a Black Cat must be fought for it. Higher up, a lotus flower is stuck to the tree.
+    - "Fifth floor: the first fight with Elaine. Edward in front with the Evil Horn, Koudelka and James with Flare, and protect the party with Reflect. Sixth floor: the second fight, with Geyser and Megalith and Edward on the Lifedrinker."
+    - "At the top is the sunrise, and the last fight. Cast Reflect on all three, put Edward in front with the Lifedrinker, and finish with Megalith. Date of the ending: 1 November 1898."
+  items:
+    - Shotgun Shells, idols (each raises one stat), a rod.
+    - Keep Koudelka's Pendant. Without it the last fight cannot be survived.
+  foes: Reflect and the sword that drains HP are the best tools.
+  sealed: The last form is much stronger and heals itself several times. The ending depends on whether you carried the Pendant and how the last fight goes, and it has its own sealed page.
+  sources:
+    - shw-wiki
+    - lp-dark-id
+    - print-guide

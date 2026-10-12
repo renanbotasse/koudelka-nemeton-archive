@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import Plate from '../../components/Plate.astro';
+---
+<Base title="Three Dawns" current="/story" description="The endings of Koudelka, sealed.">
+  <div class="page ed">
+    <p class="mono"><a href="/story">Story</a> · Endings</p>
+    <h1>Three dawns</h1>
+    <p>Everything below reveals how the story ends. Nothing on this page is shown until you open it.</p>
+    <details class="seal" data-level="endings">
+      <summary>[ UNSEAL THE ENDINGS ] — this reveals how the story ends</summary>
+      <div class="cols">
+        <section class="sheet">
+          <Plate slot="ending-1" />
+          <p class="mono">FOLIO I · WITHOUT THE PENDANT</p>
+          <p>If the lost keepsake is never recovered, the last fight cannot be won, and the night ends for everyone in the tower. It is a defeat, not a path.</p>
+        </section>
+        <section class="sheet">
+          <Plate slot="ending-2" />
+          <p class="mono">FOLIO II · WITH THE PENDANT, A VICTORY</p>
+          <p>The spirit returns to its body, the body falls into the fire, and all three guests live to see morning. What remains of the dead is memory.</p>
+        </section>
+        <section class="sheet">
+          <Plate slot="ending-3" />
+          <p class="mono">FOLIO III · WITH THE PENDANT, A DEFEAT · CANONICAL</p>
+          <p>The bishop lifts a cross, confesses an old love and rises with the spirit he failed to save. The other two leap from the burning tower, spend one night together and part at dawn. This is the ending the sequel, <em>Shadow Hearts</em>, continues from.</p>
+        </section>
+      </div>
+    </details>
+    <p><a class="btn btn--ghost" href="/story">Back to the report</a></p>
+  </div>
+</Base>

@@ -1,0 +1,123 @@
+- id: wp-koudelka
+  title: Koudelka — Wikipedia (Good Article)
+  url: https://en.wikipedia.org/wiki/Koudelka
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-sacnoth
+  title: Sacnoth — Wikipedia
+  url: https://en.wikipedia.org/wiki/Sacnoth
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-kikuta
+  title: Hiroki Kikuta — Wikipedia
+  url: https://en.wikipedia.org/wiki/Hiroki_Kikuta
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-penny-blood
+  title: Penny Blood — Wikipedia
+  url: https://en.wikipedia.org/wiki/Penny_Blood
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-nemeton
+  title: Nemeton — Wikipedia
+  url: https://en.wikipedia.org/wiki/Nemeton
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-dunsany
+  title: Lord Dunsany — Wikipedia
+  url: https://en.wikipedia.org/wiki/Lord_Dunsany
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-roger-bacon
+  title: Roger Bacon — Wikipedia
+  url: https://en.wikipedia.org/wiki/Roger_Bacon
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-princess-alice
+  title: SS Princess Alice — Wikipedia
+  url: https://en.wikipedia.org/wiki/SS_Princess_Alice
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-sophia-dorothea
+  title: Sophia Dorothea of Celle — Wikipedia
+  url: https://en.wikipedia.org/wiki/Sophia_Dorothea_of_Celle
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: wp-spiritualism
+  title: Spiritualism (movement) — Wikipedia
+  url: https://en.wikipedia.org/wiki/Spiritualism_(movement)
+  kind: wiki
+  confidence: high
+  accessed: "2026-10-08"
+- id: shw-wiki
+  title: Shadow Hearts Wiki (Fandom) — Koudelka pages
+  url: https://shadowhearts.fandom.com/wiki/Koudelka_Iasant
+  kind: wiki
+  confidence: medium
+  accessed: "2026-10-08"
+- id: directors-cut
+  title: Koudelka Director's Cut — Hiroki Kikuta's own site (2000), Internet Archive
+  url: http://www.zephyr.dti.ne.jp/~deadtech/koudelkaweb/
+  kind: primary
+  confidence: medium
+  accessed: "2026-10-08"
+- id: soundtrack-central
+  title: Koudelka Original Soundtrack — Soundtrack Central
+  url: https://soundtrackcentral.com/albums/179/koudelka-soundtrack
+  kind: database
+  confidence: high
+  accessed: "2026-10-08"
+- id: esrb
+  title: Koudelka — ESRB rating summary
+  url: https://www.esrb.org/ratings/5185/Koudelka/
+  kind: database
+  confidence: high
+  accessed: "2026-10-08"
+- id: ign-2000
+  title: IGN — “I See Dead People, And They're In That Store…” (28 Jun 2000)
+  url: https://www.ign.com/articles/2000/06/29/i-see-dead-people-and-theyre-in-that-store
+  kind: press
+  confidence: high
+  accessed: "2026-10-08"
+- id: kikuta-bandcamp
+  title: Hiroki Kikuta — official Bandcamp
+  url: https://hirokikikuta.bandcamp.com/music
+  kind: primary
+  confidence: high
+  accessed: "2026-10-08"
+- id: lp-dark-id
+  title: Koudelka — a Let's Play by The Dark Id (LPArchive)
+  url: https://lparchive.org/Koudelka-(by-The-Dark-Id)/
+  kind: playthrough
+  confidence: medium
+  accessed: "2026-10-08"
+- id: dantas-guide
+  title: Koudelka FAQ/Walkthrough by DANado (Lucas Dantas) and Carla Souza, 2008 (in Portuguese, GameStory)
+  url: https://www.flogao.com.br/gamestory
+  kind: guide
+  confidence: medium
+  accessed: "2026-10-08"
+- id: print-guide
+  title: A Brazilian print strategy guide, pages 26–41 (scans supplied by the project owner)
+  kind: guide
+  confidence: medium
+  accessed: "2026-10-08"
+- id: time-extension-2025
+  title: "Director Of PS1 Horror RPG Koudelka “Surprised” People Are Still Interested In It 25 Years Later — Time Extension (7 Mar 2025)"
+  kind: press
+  confidence: high
+  accessed: "2026-10-08"
+- id: shw-koudelka
+  title: "Koudelka (game page) — Shadow Hearts Wiki"
+  kind: wiki
+  confidence: medium
+  accessed: "2026-10-08"

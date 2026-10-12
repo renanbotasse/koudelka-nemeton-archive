@@ -1,0 +1,33 @@
+---
+import { formatCitation } from '../lib/cite';
+interface Props { title: string; }
+const { title } = Astro.props;
+const path = Astro.url.pathname;
+// Build-time text uses the path; the script swaps in the real origin and today's date.
+const text = formatCitation({ title, url: path, accessed: 'on the day you read it' });
+---
+<details class="cite" data-cite-title={title} data-cite-path={path}>
+  <summary>[ CITE ]</summary>
+  <p class="mono cite-text" data-cite-text>{text}</p>
+  <button class="chip" type="button" data-cite-copy>Copy citation</button>
+  <span class="mono" role="status" aria-live="polite" data-cite-status></span>
+</details>
+<script>
+  import { formatCitation, isoDate } from '../lib/cite';
+  for (const box of document.querySelectorAll<HTMLDetailsElement>('details.cite')) {
+    const textEl = box.querySelector<HTMLElement>('[data-cite-text]')!;
+    const status = box.querySelector<HTMLElement>('[data-cite-status]')!;
+    const text = formatCitation({
+      title: box.dataset.citeTitle ?? '',
+      url: location.origin + (box.dataset.citePath ?? ''),
+      accessed: isoDate(new Date()),
+    });
+    textEl.textContent = text;
+    box.querySelector('[data-cite-copy]')?.addEventListener('click', () => {
+      navigator.clipboard?.writeText(text).then(
+        () => { status.textContent = 'COPIED'; },
+        () => { status.textContent = 'SELECT THE TEXT ABOVE TO COPY'; },
+      );
+    });
+  }
+</script>

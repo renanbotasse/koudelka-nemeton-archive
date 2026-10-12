@@ -1,0 +1,990 @@
+- id: person-koudelka-iasant-portrait
+  group: Characters
+  page: /people/koudelka-iasant
+  title: "Koudelka Iasant: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P0
+  kind: official
+  where: /people/koudelka-iasant, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-koudelka-iasant-art
+  group: Characters
+  page: /people/koudelka-iasant
+  title: "Koudelka Iasant: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/koudelka-iasant
+  tips: ""
+- id: person-edward-plunkett-portrait
+  group: Characters
+  page: /people/edward-plunkett
+  title: "Edward Plunkett: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P0
+  kind: official
+  where: /people/edward-plunkett, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-edward-plunkett-art
+  group: Characters
+  page: /people/edward-plunkett
+  title: "Edward Plunkett: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/edward-plunkett
+  tips: ""
+- id: person-james-oflaherty-portrait
+  group: Characters
+  page: /people/james-oflaherty
+  title: "James O’Flaherty: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P0
+  kind: official
+  where: /people/james-oflaherty, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-james-oflaherty-art
+  group: Characters
+  page: /people/james-oflaherty
+  title: "James O’Flaherty: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/james-oflaherty
+  tips: ""
+- id: person-the-caretakers-portrait
+  group: Characters
+  page: /people/the-caretakers
+  title: "Ogden and Bessy Hartman: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P1
+  kind: official
+  where: /people/the-caretakers, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-the-caretakers-art
+  group: Characters
+  page: /people/the-caretakers
+  title: "Ogden and Bessy Hartman: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/the-caretakers
+  tips: ""
+- id: person-charlotte-portrait
+  group: Characters
+  page: /people/charlotte
+  title: "Charlotte D’Lota: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P1
+  kind: official
+  where: /people/charlotte, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-charlotte-art
+  group: Characters
+  page: /people/charlotte
+  title: "Charlotte D’Lota: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/charlotte
+  tips: ""
+- id: person-roger-bacon-portrait
+  group: Characters
+  page: /people/roger-bacon
+  title: "Roger Bacon: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P1
+  kind: official
+  where: /people/roger-bacon, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-roger-bacon-art
+  group: Characters
+  page: /people/roger-bacon
+  title: "Roger Bacon: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/roger-bacon
+  tips: ""
+- id: person-elaine-portrait
+  group: Characters
+  page: /people/elaine
+  title: "Elaine Heyworth: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P1
+  kind: official
+  where: /people/elaine, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-elaine-art
+  group: Characters
+  page: /people/elaine
+  title: "Elaine Heyworth: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P1
+  kind: official
+  where: /people/elaine
+  tips: ""
+- id: person-alias-portrait
+  group: Characters
+  page: /people/alias
+  title: "Alias: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "Face or bust: concept art, an in-game model render, or a cut-scene frame. Replaces the low-poly bust on the file page, the cards and the deck."
+  priority: P2
+  kind: official
+  where: /people/alias, /people, home cards, deck
+  tips: Plain background if possible. One clear face. Same style for all characters.
+- id: person-alias-art
+  group: Characters
+  page: /people/alias
+  title: "Alias: full figure or scene"
+  ratio: 16:9
+  minWidth: 1400
+  what: Full-body concept art, a cut-scene still, or a screenshot of the character in a room.
+  priority: P2
+  kind: official
+  where: /people/alias
+  tips: ""
+- id: person-patrick-portrait
+  group: Characters
+  page: /people/elaine
+  title: "Patrick Heyworth: portrait"
+  ratio: 4:5
+  minWidth: 800
+  what: "He is never seen from the front in the game: back-view CG or concept art is fine."
+  priority: P2
+  kind: official
+  where: /people/elaine
+  tips: ""
+- id: hist-dunsany
+  group: Characters
+  page: /people/edward-plunkett
+  title: Lord Dunsany (the real writer)
+  ratio: 4:5
+  minWidth: 600
+  what: A public-domain photograph of Edward Plunkett, 18th Baron of Dunsany.
+  priority: P2
+  kind: public-domain
+  where: /people/edward-plunkett
+  tips: Wikimedia Commons.
+- id: hist-roger-bacon
+  group: Characters
+  page: /people/roger-bacon
+  title: Roger Bacon (the real friar)
+  ratio: 4:5
+  minWidth: 600
+  what: A public-domain portrait or manuscript illustration of Roger Bacon.
+  priority: P2
+  kind: public-domain
+  where: /people/roger-bacon
+  tips: Wikimedia Commons.
+- id: hist-sophia-dorothea
+  group: Characters
+  page: /people/charlotte
+  title: Sophia Dorothea of Celle
+  ratio: 4:5
+  minWidth: 600
+  what: A public-domain portrait of the real noblewoman who inspired Charlotte’s mother.
+  priority: P2
+  kind: public-domain
+  where: /people/charlotte
+  tips: Wikimedia Commons.
+- id: people-hero
+  group: Characters
+  page: /people
+  title: "The register: cast artwork"
+  ratio: 21:9
+  minWidth: 1800
+  what: Group artwork of the three guests, or a key-art crop with all of them.
+  priority: P1
+  kind: official
+  where: /people (top)
+  tips: ""
+- id: walk-hero
+  group: Walkthrough
+  page: /walkthrough
+  title: "Nemeton Monastery: exterior"
+  ratio: 16:9
+  minWidth: 1800
+  what: "The monastery seen from outside: key art, a CG establishing shot, or the opening FMV."
+  priority: P0
+  kind: official
+  where: /walkthrough (top)
+  tips: ""
+- id: map-floor-0
+  group: Walkthrough
+  page: /walkthrough
+  title: "Floor map: Underground"
+  ratio: 4:3
+  minWidth: 1000
+  what: The strategy-guide map of the underground. You already have these in the reference/maps folder.
+  priority: P0
+  kind: official
+  where: /walkthrough, every area page
+  tips: Crop clean, no browser chrome.
+- id: map-floor-1
+  group: Walkthrough
+  page: /walkthrough
+  title: "Floor map: 1st floor"
+  ratio: 4:3
+  minWidth: 1000
+  what: The strategy-guide map of the 1st floor. You already have these in the reference/maps folder.
+  priority: P0
+  kind: official
+  where: /walkthrough, every area page
+  tips: Crop clean, no browser chrome.
+- id: map-floor-2
+  group: Walkthrough
+  page: /walkthrough
+  title: "Floor map: 2nd floor"
+  ratio: 4:3
+  minWidth: 1000
+  what: The strategy-guide map of the 2nd floor. You already have these in the reference/maps folder.
+  priority: P0
+  kind: official
+  where: /walkthrough, every area page
+  tips: Crop clean, no browser chrome.
+- id: map-floor-3
+  group: Walkthrough
+  page: /walkthrough
+  title: "Floor map: 3rd floor"
+  ratio: 4:3
+  minWidth: 1000
+  what: The strategy-guide map of the 3rd floor. You already have these in the reference/maps folder.
+  priority: P0
+  kind: official
+  where: /walkthrough, every area page
+  tips: Crop clean, no browser chrome.
+- id: area-gates-and-walls-shot
+  group: Walkthrough
+  page: /walkthrough/gates-and-walls
+  title: "Gates and Walls: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/gates-and-walls
+  tips: Prefer the wide establishing view of the room.
+- id: area-stables-shot
+  group: Walkthrough
+  page: /walkthrough/stables
+  title: "The Stables: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/stables
+  tips: Prefer the wide establishing view of the room.
+- id: area-caretakers-quarters-shot
+  group: Walkthrough
+  page: /walkthrough/caretakers-quarters
+  title: "The Caretakers’ Quarters: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/caretakers-quarters
+  tips: Prefer the wide establishing view of the room.
+- id: area-prison-shot
+  group: Walkthrough
+  page: /walkthrough/prison
+  title: "The Dungeon and the Prison: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/prison
+  tips: Prefer the wide establishing view of the room.
+- id: area-underground-shrine-shot
+  group: Walkthrough
+  page: /walkthrough/underground-shrine
+  title: "The Underground Shrine: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/underground-shrine
+  tips: Prefer the wide establishing view of the room.
+- id: area-storage-room-shot
+  group: Walkthrough
+  page: /walkthrough/storage-room
+  title: "The Storage Room: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/storage-room
+  tips: Prefer the wide establishing view of the room.
+- id: area-library-shot
+  group: Walkthrough
+  page: /walkthrough/library
+  title: "The Library: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/library
+  tips: Prefer the wide establishing view of the room.
+- id: area-church-nave-shot
+  group: Walkthrough
+  page: /walkthrough/church-nave
+  title: "The Church Nave: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/church-nave
+  tips: Prefer the wide establishing view of the room.
+- id: area-inner-grounds-shot
+  group: Walkthrough
+  page: /walkthrough/inner-grounds
+  title: "The Inner Grounds: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/inner-grounds
+  tips: Prefer the wide establishing view of the room.
+- id: area-underground-passage-shot
+  group: Walkthrough
+  page: /walkthrough/underground-passage
+  title: "The Underground Passage: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/underground-passage
+  tips: Prefer the wide establishing view of the room.
+- id: area-graveyard-shot
+  group: Walkthrough
+  page: /walkthrough/graveyard
+  title: "The Graveyard: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/graveyard
+  tips: Prefer the wide establishing view of the room.
+- id: area-charlottes-cell-shot
+  group: Walkthrough
+  page: /walkthrough/charlottes-cell
+  title: "Charlotte’s Cell: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/charlottes-cell
+  tips: Prefer the wide establishing view of the room.
+- id: area-patricks-quarters-shot
+  group: Walkthrough
+  page: /walkthrough/patricks-quarters
+  title: "Patrick’s Quarters: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/patricks-quarters
+  tips: Prefer the wide establishing view of the room.
+- id: area-church-crypt-shot
+  group: Walkthrough
+  page: /walkthrough/church-crypt
+  title: "The Vestry and the Church: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/church-crypt
+  tips: Prefer the wide establishing view of the room.
+- id: area-bell-tower-shot
+  group: Walkthrough
+  page: /walkthrough/bell-tower
+  title: "The Bell Tower: the room"
+  ratio: 16:9
+  minWidth: 1400
+  what: An in-game screenshot of the area (the pre-rendered background, with no menu or text box).
+  priority: P1
+  kind: official
+  where: /walkthrough/bell-tower
+  tips: Prefer the wide establishing view of the room.
+- id: area-gates-and-walls-map
+  group: Walkthrough
+  page: /walkthrough/gates-and-walls
+  title: "Gates and Walls: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/gates-and-walls
+  tips: ""
+- id: area-stables-map
+  group: Walkthrough
+  page: /walkthrough/stables
+  title: "The Stables: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/stables
+  tips: ""
+- id: area-caretakers-quarters-map
+  group: Walkthrough
+  page: /walkthrough/caretakers-quarters
+  title: "The Caretakers’ Quarters: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/caretakers-quarters
+  tips: ""
+- id: area-prison-map
+  group: Walkthrough
+  page: /walkthrough/prison
+  title: "The Dungeon and the Prison: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/prison
+  tips: ""
+- id: area-underground-shrine-map
+  group: Walkthrough
+  page: /walkthrough/underground-shrine
+  title: "The Underground Shrine: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/underground-shrine
+  tips: ""
+- id: area-storage-room-map
+  group: Walkthrough
+  page: /walkthrough/storage-room
+  title: "The Storage Room: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/storage-room
+  tips: ""
+- id: area-library-map
+  group: Walkthrough
+  page: /walkthrough/library
+  title: "The Library: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/library
+  tips: ""
+- id: area-church-nave-map
+  group: Walkthrough
+  page: /walkthrough/church-nave
+  title: "The Church Nave: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/church-nave
+  tips: ""
+- id: area-inner-grounds-map
+  group: Walkthrough
+  page: /walkthrough/inner-grounds
+  title: "The Inner Grounds: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/inner-grounds
+  tips: ""
+- id: area-underground-passage-map
+  group: Walkthrough
+  page: /walkthrough/underground-passage
+  title: "The Underground Passage: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/underground-passage
+  tips: ""
+- id: area-graveyard-map
+  group: Walkthrough
+  page: /walkthrough/graveyard
+  title: "The Graveyard: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/graveyard
+  tips: ""
+- id: area-charlottes-cell-map
+  group: Walkthrough
+  page: /walkthrough/charlottes-cell
+  title: "Charlotte’s Cell: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/charlottes-cell
+  tips: ""
+- id: area-patricks-quarters-map
+  group: Walkthrough
+  page: /walkthrough/patricks-quarters
+  title: "Patrick’s Quarters: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/patricks-quarters
+  tips: ""
+- id: area-church-crypt-map
+  group: Walkthrough
+  page: /walkthrough/church-crypt
+  title: "The Vestry and the Church: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/church-crypt
+  tips: ""
+- id: area-bell-tower-map
+  group: Walkthrough
+  page: /walkthrough/bell-tower
+  title: "The Bell Tower: area map"
+  ratio: 4:3
+  minWidth: 800
+  what: The small per-area map from the strategy guide, if one exists, or a crop of the floor map with the area marked.
+  priority: P2
+  kind: official
+  where: /walkthrough/bell-tower
+  tips: ""
+- id: story-hero
+  group: Story
+  page: /story
+  title: "The incident report: opening image"
+  ratio: 16:9
+  minWidth: 1800
+  what: "A dark, atmospheric frame: the monastery at night, the gate, or the title screen background."
+  priority: P1
+  kind: official
+  where: /story (top)
+  tips: ""
+- id: act-0
+  group: Story
+  page: /story
+  title: "Prologue: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-1
+  group: Story
+  page: /story
+  title: "Act I: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-2
+  group: Story
+  page: /story
+  title: "Act II: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-3
+  group: Story
+  page: /story
+  title: "Act III: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-4
+  group: Story
+  page: /story
+  title: "Act IV: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-5
+  group: Story
+  page: /story
+  title: "Act V: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-6
+  group: Story
+  page: /story
+  title: "Act VI: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-7
+  group: Story
+  page: /story
+  title: "Act VII: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: act-8
+  group: Story
+  page: /story
+  title: "Epilogue: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: One frame from the cut-scenes or CG that best represents the act. No spoilers in the frame for the open acts (Prologue, I, II).
+  priority: P2
+  kind: official
+  where: /story, inside each act
+  tips: ""
+- id: ending-1
+  group: Story
+  page: /story/endings
+  title: "Ending 1: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: The final frame of each ending.
+  priority: P2
+  kind: official
+  where: /story/endings, inside the seal
+  tips: ""
+- id: ending-2
+  group: Story
+  page: /story/endings
+  title: "Ending 2: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: The final frame of each ending.
+  priority: P2
+  kind: official
+  where: /story/endings, inside the seal
+  tips: ""
+- id: ending-3
+  group: Story
+  page: /story/endings
+  title: "Ending 3: still"
+  ratio: 16:9
+  minWidth: 1400
+  what: The final frame of each ending.
+  priority: P2
+  kind: official
+  where: /story/endings, inside the seal
+  tips: ""
+- id: design-hero
+  group: Design
+  page: /design
+  title: "Design notes: opening image"
+  ratio: 16:9
+  minWidth: 1800
+  what: Key art, the box front, or the title screen.
+  priority: P0
+  kind: official
+  where: /design (top)
+  tips: ""
+- id: design-sketches
+  group: Design
+  page: /design
+  title: Yūji Iwahara’s character sketches
+  ratio: 16:9
+  minWidth: 1400
+  what: Concept sketches of the cast.
+  priority: P1
+  kind: official
+  where: /design, “The cast”
+  tips: ""
+- id: design-stdavids
+  group: Design
+  page: /design
+  title: St Davids Cathedral
+  ratio: 16:9
+  minWidth: 1600
+  what: The photo of the Pembrokeshire cathedral that inspired the architecture (you already have it).
+  priority: P1
+  kind: photo
+  where: /design, “The place”
+  tips: Needs a photo credit.
+- id: design-pembrokeshire
+  group: Design
+  page: /design
+  title: The Pembrokeshire coast
+  ratio: 16:9
+  minWidth: 1600
+  what: Cliffs, ruins and weather on the Welsh coast.
+  priority: P2
+  kind: photo
+  where: /design, “The place”
+  tips: Wikimedia Commons (CC) works, with credit.
+- id: design-kikuta
+  group: Design
+  page: /design
+  title: Hiroki Kikuta
+  ratio: 4:5
+  minWidth: 600
+  what: A photo of the director and composer. Only if the rights allow.
+  priority: P2
+  kind: photo
+  where: /design, “Where it came from”
+  tips: ""
+- id: design-mocap
+  group: Design
+  page: /design
+  title: Motion capture
+  ratio: 16:9
+  minWidth: 1400
+  what: "A making-of image: actors in capture suits, or a behind-the-scenes screenshot."
+  priority: P2
+  kind: official
+  where: /design, “The cast”
+  tips: ""
+- id: design-directors-cut
+  group: Design
+  page: /design
+  title: Kikuta’s Director’s Cut site
+  ratio: 16:9
+  minWidth: 1400
+  what: A screenshot of the director’s own 2000 website, from the Internet Archive.
+  priority: P2
+  kind: official
+  where: /design, “What it was built from”
+  tips: ""
+- id: design-ost-cover
+  group: Design
+  page: /design
+  title: Soundtrack cover
+  ratio: 1:1
+  minWidth: 900
+  what: The cover of Koudelka Original Soundtrack (Pony Canyon, PCCB-00396).
+  priority: P1
+  kind: official
+  where: /design, “The sound”
+  tips: ""
+- id: file-the-princess-alice-image
+  group: Archive
+  page: /archive/files/the-princess-alice
+  title: The Princess Alice disaster, 1878
+  ratio: 16:9
+  minWidth: 1400
+  what: A period engraving or photograph of the disaster at Gallions Reach.
+  priority: P1
+  kind: public-domain
+  where: /archive/files/the-princess-alice
+  tips: Wikimedia Commons.
+- id: file-the-emigre-document-image
+  group: Archive
+  page: /archive/files/the-emigre-document
+  title: The Emigre Document
+  ratio: 4:5
+  minWidth: 900
+  what: The skull-shaped book from the game, or a public-domain Voynich manuscript folio for the real echo.
+  priority: P1
+  kind: official
+  where: /archive/files/the-emigre-document
+  tips: ""
+- id: file-the-pendant-image
+  group: Archive
+  page: /archive/files/the-pendant
+  title: The Pendant
+  ratio: 1:1
+  minWidth: 800
+  what: The item art or an in-game close-up of Koudelka’s pendant.
+  priority: P2
+  kind: official
+  where: /archive/files/the-pendant
+  tips: ""
+- id: release-jp-cover
+  group: Archive
+  page: /archive/releases
+  title: "Japanese release: box"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover, SNK, 16 December 1999.
+  priority: P1
+  kind: official
+  where: /archive/releases
+  tips: ""
+- id: release-na-cover
+  group: Archive
+  page: /archive/releases
+  title: "North American release: box"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover, Infogrames, 29 June 2000.
+  priority: P1
+  kind: official
+  where: /archive/releases
+  tips: ""
+- id: release-eu-cover
+  group: Archive
+  page: /archive/releases
+  title: "European release: box"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover, Infogrames, 27 September 2000.
+  priority: P1
+  kind: official
+  where: /archive/releases
+  tips: ""
+- id: legacy-shadow-hearts-1
+  group: Archive
+  page: /archive/legacy
+  title: "Shadow Hearts (2001): cover"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover.
+  priority: P2
+  kind: official
+  where: /archive/legacy
+  tips: ""
+- id: legacy-shadow-hearts-2
+  group: Archive
+  page: /archive/legacy
+  title: "Shadow Hearts: Covenant (2004): cover"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover.
+  priority: P2
+  kind: official
+  where: /archive/legacy
+  tips: ""
+- id: legacy-shadow-hearts-3
+  group: Archive
+  page: /archive/legacy
+  title: "Shadow Hearts: From the New World (2005): cover"
+  ratio: 4:5
+  minWidth: 700
+  what: Front cover.
+  priority: P2
+  kind: official
+  where: /archive/legacy
+  tips: ""
+- id: legacy-penny-blood
+  group: Archive
+  page: /archive/legacy
+  title: "Penny Blood: key art"
+  ratio: 16:9
+  minWidth: 1400
+  what: Key art of the spiritual successor.
+  priority: P2
+  kind: official
+  where: /archive/legacy
+  tips: ""
+- id: og-image
+  group: Site
+  page: all pages
+  title: Share image (link previews)
+  ratio: 1200:630
+  minWidth: 1200
+  what: A 1200×630 image for WhatsApp, Discord and social previews. Free of spoilers.
+  priority: P1
+  kind: official
+  where: link previews
+  tips: Replaces the generated placeholder.
+- id: walk-elevation
+  group: Walkthrough
+  page: /walkthrough
+  title: "Architectural sketch of the monastery"
+  ratio: 2:1
+  minWidth: 900
+  what: "The pencil elevation of the church spire beside the manor house. You already have a small one in the reference/maps folder; a larger copy would be better."
+  priority: P1
+  kind: official
+  where: /walkthrough, next to the drawings
+  tips: ""
+- id: people-poster
+  group: Characters
+  page: /people
+  title: "The cast: key-art poster"
+  ratio: 2:3
+  minWidth: 600
+  what: "Poster-style artwork with the cast together, shown beside the register's introduction."
+  priority: P1
+  kind: official
+  where: /people (top)
+  tips: ""

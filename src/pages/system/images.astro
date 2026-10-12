@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { findImage } from '../../lib/images';
+
+const all = await getCollection('images');
+const rows = await Promise.all(all.map(async (e) => ({ id: e.id, d: e.data, img: await findImage(e.id) })));
+const done = rows.filter((r) => r.img).length;
+const groups = [...new Set(rows.map((r) => r.d.group))];
+---
+<Base title="Image slots" current="" index={false}>
+  <div class="page">
+    <p class="mono">System · not linked, not indexed</p>
+    <h1>Image slots</h1>
+    <p>{done} of {rows.length} slots filled. Put each file in <code>public/images/</code> named exactly as the slot id.</p>
+    {groups.map((g) => (
+      <section>
+        <h2>{g}</h2>
+        <table class="tbl">
+          <thead><tr><th scope="col">Slot</th><th scope="col">What</th><th scope="col">Size</th><th scope="col">Priority</th><th scope="col">State</th></tr></thead>
+          <tbody>
+            {rows.filter((r) => r.d.group === g).map((r) => (
+              <tr><th scope="row">{r.id}</th><td><strong>{r.d.title}</strong><br />{r.d.what}<br /><em>{r.d.where}</em></td><td>{r.d.ratio}<br />{r.d.minWidth}px+</td><td>{r.d.priority}</td><td>{r.img ? `OK · ${r.img.width}×${r.img.height}` : 'EMPTY'}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    ))}
+  </div>
+</Base>

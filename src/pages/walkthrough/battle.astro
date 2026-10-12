@@ -1,0 +1,126 @@
+---
+import Base from '../../layouts/Base.astro';
+import { STAT_NAMES, STAT_ORDER } from '../../lib/stats';
+
+const effects: Record<(typeof STAT_ORDER)[number], string> = {
+  STR: 'The power of physical attacks.',
+  VIT: 'Life: it raises maximum HP and physical defence.',
+  DEX: 'Aim, and the ability to dodge a blow.',
+  AGL: 'Speed: how soon and how often a character acts in a battle.',
+  INT: 'Spell power: it makes spells (and healing) stronger.',
+  PIE: 'Maximum MP, and defence against enemy magic.',
+  MND: 'Magical aim: how reliably a spell lands.',
+  LUC: 'Fortune: encounters, chance to hit, defence and the odds of escaping.',
+};
+const spells = [
+  ['Flare', 'Fire', 'Given for winning the first fight. It burns enemies, and at level 2 it also hits the targets on either side.'],
+  ['Heal', 'Healing', 'Restores an ally’s HP and can be cast from the menu outside battle. Cast on a demon by mistake, it heals the demon.'],
+  ['Geyser', 'Water and ice', 'Won from the plant boss in the herb garden. Freezes enemies. The best answer to red and watery foes.'],
+  ['Tornado', 'Wind and lightning', 'A reward from the idol trio. It does great damage, and it is the answer to the Dark Young and the Gug.'],
+  ['Megalith', 'Earth', 'A reward from the Mummy Bride. It throws stones from the floor. Good against flying insects and the giants.'],
+  ['Revive', 'Support', 'Brings an ally back with HP restored. Learned in the priests’ quarters.'],
+  ['Reflect', 'Support', 'Bounces an enemy spell back at its caster, and the caster’s strength decides the damage. Learned from the Scapegoat, and essential against the strongest bosses.'],
+  ['Fortify', 'Support (James)', 'Raises one attribute of an ally. Cast on an enemy it lowers it.'],
+] as const;
+const items: Array<[string, Array<[string, string]>]> = [
+  ['Restoring', [['Bread', '150 HP'], ['Cheese', '250 HP'], ['Dried Food', '350 HP'], ['Potion', '500 HP'], ['High Potion', '1,500 HP'], ['Listel', '40 MP'], ['High Listel', '100 MP'], ['Roman Nuts', 'All HP and MP'], ['Elixir', 'All HP and MP, only on a conscious ally'], ['Whisky', 'Revives a fallen ally with 50 HP'], ['Antidote', 'Cures poison'], ['Panacea', 'Cures poison, paralysis and silence'], ['Scrolls', 'Cast an elemental spell once, in battle']]],
+  ['Armour and clothes', [['Rags', 'Raises PIE'], ['Frock and Robe', 'Raise PIE and LUC'], ['Leather Mail', 'Raises VIT and LUC'], ['Chain Mail', 'Raises LUC and INT'], ['P Mail', 'Raises VIT; heavy, hard to move in']]],
+  ['Accessories', [['Ring, J Ring, Brooch, Badge, Jewel', 'Raise INT, MND and PIE in different measures'], ['Rosario', 'Raises INT, PIE and MND, and repels evil spirits'], ['Flare Brooch', 'Raises VIT, INT, MND and PIE'], ['Star Brooch', 'Raises VIT, MND, AGL and PIE'], ['Pendant', 'Koudelka’s own: INT, PIE, MND and LUC, and needed for the last fight']]],
+  ['Ammunition', [['Pistol Rounds, Rifle Rounds, Shotgun Shells', '20 each; every gun uses its own'], ['Bowgun Arrows', '10 metal-tipped arrows']]],
+];
+const monsters = [
+  ['Beads', 'Floating lumps of flesh. Easy with magic or a weapon.'],
+  ['Black Cat', 'Casts a strong spell that drains HP. Kill it with a weapon.'],
+  ['Brute', 'Rises from the graves. Geyser sends it back.'],
+  ['Chikon', 'A mishap of flesh. Weak to magic and to quick physical hits; dark weapons do nothing.'],
+  ['Crippled Giant', 'A large ghost with boss-level HP. Kill it quickly with Megalith or the best sword.'],
+  ['Demonic Nobleman', 'A fierce rapier fighter that also casts. Flare.'],
+  ['Evil Table, Chairs and Shelf', 'Possessed furniture: tables paralyse (Geyser), chairs burn (Flare), shelves are tough and poison (magic).'],
+  ['Eye Balls', 'Surprisingly fast, with high HP. Several magic hits.'],
+  ['Giant Roaches and Sucks', 'Easy prey. A physical blow will do.'],
+  ['Inverse', 'Headless spirits that drop from the ceiling and shoot, often knocking Koudelka out of the field. Geyser.'],
+  ['Joker', 'Casters who mostly buff themselves instead of hurting you.'],
+  ['Knights in Armour', 'Use an attack spell, and watch for their paralysis.'],
+  ['Marses', 'Strange monsters that cast from the corners of the field. Run to them and use a weapon.'],
+  ['Mutilated Corpses', 'Remains wandering the abbey. Magic frees them.'],
+  ['Puppets', 'Physically weak: a good sword stroke ends them. Do not waste magic.'],
+  ['Raven', 'The most detestable bird in the game. Finish it with a weapon.'],
+  ['Skeleton', 'Attacks by butting with its skull. Geyser.'],
+  ['Tamacoss', 'More annoying than dangerous. Tornado.'],
+  ['Viewer', 'A huge floating eye that casts. Hard to beat: use physical attacks, and magic only if needed.'],
+  ['Zombies', 'Slow flesh-eaters die to Flare. Hounds act before you do; use fire weapons.'],
+];
+const bosses: Array<{ name: string; hint: string; seal?: 'story' | 'endings' }> = [
+  { name: 'Werewolf', hint: 'The first fight. A pistol finishes it easily.' },
+  { name: 'Tree Demon (Giant Plant)', hint: 'High HP: be persistent. Edward with a blade, Koudelka with Flare. It poisons.' },
+  { name: 'Viewer Trio', hint: 'Red: Geyser. Blue: Flare or any firearm. Green: any weapon.' },
+  { name: 'Mummified Bride', hint: 'Very fast, magic and blows. Flare or Tornado; she hides in a wardrobe.' },
+  { name: 'The Reflections', hint: 'Phantom copies of the party. Take the false James and Edward first and Koudelka last.' },
+  { name: 'Larval Human Fly', hint: 'Heavy magic damage. Megalith.' },
+  { name: 'Dark Young', hint: 'Very fast. Tornado, and have James heal Edward.' },
+  { name: 'Human Hydra (Chimera)', hint: 'A body of three cobra heads. Geyser.' },
+  { name: 'Gug', hint: 'An eyeless brute that casts and crushes. Tornado at level 3.' },
+  { name: 'Charlotte', hint: 'You may avoid the fight if you pray at her tomb and hold the letters. Otherwise Geyser.', seal: 'story' },
+  { name: 'Scapegoat', hint: 'Easy: it jumps about and casts at the nearest person. Flare.', seal: 'story' },
+  { name: 'Apostle', hint: 'Do not use physical attacks, and do not cast while it trembles. Reflect on everyone.', seal: 'story' },
+  { name: 'Gargoyle', hint: 'The strongest demon in the abbey. Reflect, lots of healing, Geyser, and Edward’s Lifedrinker.', seal: 'story' },
+  { name: 'Dissected Tentacles', hint: 'Lots of HP and strong magic. Flare works very well.', seal: 'story' },
+  { name: 'Elaine, all forms', hint: 'Immune to physical attacks in the first fights. Flare, then Tornado, Geyser and Megalith; Reflect on the party.', seal: 'endings' },
+];
+---
+<Base title="Battle, magic and items" current="/walkthrough" description="How fights work in Koudelka: commands, the eight attributes, magic, items, monsters and bosses.">
+  <div class="page ed">
+    <p class="mono"><a href="/walkthrough">Walkthrough</a> · Battle</p>
+    <h1>Battle, magic and items</h1>
+    <p>Everything the game does not explain, in one place. The advice comes from two printed and web guides and a recorded play-through; where they disagree, the page says so. Item properties and many numbers are randomised in each game.</p>
+
+    <h2>How a fight works</h2>
+    <ul>
+      <li><strong>A chessboard.</strong> Fights are turn-based on a grid, and each character acts once per turn: move (up to three squares), then act. Actions are Attack, Magic, Item and Weapon change. You can also Wait, check Status or Escape.</li>
+      <li><strong>You can block.</strong> Nobody can walk through a square that is occupied, and nobody can go past the enemy in front of them. Putting Edward or James in front of Koudelka means she cannot be hit in melee.</li>
+      <li><strong>Positions matter.</strong> The Formation menu sets where each character starts, as pieces on a board: Koudelka the queen, Edward the knight, James the bishop.</li>
+      <li><strong>Falling is not dying.</strong> At zero HP a character is unconscious and returns with 1 HP after the fight. If all three fall, it is game over, and if Koudelka falls you lose at once.</li>
+      <li><strong>Status effects.</strong> Poison drains HP, paralysis stops you from moving, casting or attacking, and silence stops magic. A Panacea cures all three, an Antidote only poison.</li>
+      <li><strong>Everything grows with use.</strong> Weapons and spells gain skill levels as you use them, which brings extra hits, a wider area, or more damage. Spells go to level 3.</li>
+      <li><strong>Weapons break.</strong> Melee weapons wear out and cannot be repaired; guns need ammunition. Rotate your weapons and save the best for bosses.</li>
+      <li><strong>Saves.</strong> A permanent save point restores HP and MP. A temporary save (marked with an “S” in the map) does not.</li>
+    </ul>
+
+    <h2>The eight attributes</h2>
+    <p>After each battle every character receives four points to spend as you like. Always put one into AGL: it makes everyone faster. Spend the rest by role.</p>
+    <table class="tbl">
+      <thead><tr><th scope="col">Attribute</th><th scope="col">What it does</th></tr></thead>
+      <tbody>{STAT_ORDER.map((k) => <tr><th scope="row">{STAT_NAMES[k]} ({k})</th><td>{effects[k]}</td></tr>)}</tbody>
+    </table>
+    <ul>
+      <li><strong>Koudelka:</strong> Intelligence and Mind for strong spells, then Piety for MP. She belongs in the back row.</li>
+      <li><strong>Edward:</strong> Strength, Vitality and Dexterity. Give him a little Piety too, or one enemy spell will drop him.</li>
+      <li><strong>James:</strong> the most flexible of the three. He is a good fighter and a good caster, so choose what to make of him.</li>
+    </ul>
+
+    <h2>Magic</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">Spell</th><th scope="col">Kind</th><th scope="col">What to know</th></tr></thead>
+      <tbody>{spells.map(([n, k, t]) => <tr><th scope="row">{n}</th><td>{k}</td><td>{t}</td></tr>)}</tbody>
+    </table>
+
+    <h2>Items</h2>
+    {items.map(([group, list]) => (
+      <>
+        <h3>{group}</h3>
+        <table class="tbl"><tbody>{list.map(([n, t]) => <tr><th scope="row">{n}</th><td>{t}</td></tr>)}</tbody></table>
+      </>
+    ))}
+
+    <h2>Monsters</h2>
+    <table class="tbl"><tbody>{monsters.map(([n, t]) => <tr><th scope="row">{n}</th><td>{t}</td></tr>)}</tbody></table>
+
+    <h2>Bosses</h2>
+    <p>In the order you meet them. The later ones are sealed.</p>
+    <ul>
+      {bosses.map((b) => b.seal ? (
+        <li><details class="seal"><summary>[SEALED — {b.seal === 'endings' ? 'the endings' : 'story spoilers'}]</summary><div><p><strong>{b.name}.</strong> {b.hint}</p></div></details></li>
+      ) : <li><strong>{b.name}.</strong> {b.hint}</li>)}
+    </ul>
+  </div>
+</Base>

@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import Deck from '../../components/Deck';
+import PersonCard from '../../components/PersonCard.astro';
+import Plate from '../../components/Plate.astro';
+import { findImage } from '../../lib/images';
+import { getCollection } from 'astro:content';
+
+const all = (await getCollection('people')).sort((a, b) => a.data.number - b.data.number);
+const guests = all.filter((p) => p.data.group === 'guests');
+const numerals = ['I', 'II', 'III'];
+const cards = await Promise.all(guests.map(async (p, i) => ({ id: p.id, name: p.data.name, roles: p.data.roles, summary: p.data.summary, numeral: numerals[i] ?? '', img: (await findImage(`person-${p.id}-portrait`))?.src ?? `/world/busts/${p.id}.png` })));
+const groups = [['house', 'The house'], ['others', 'The others']] as const;
+---
+<Base title="People" current="/people" description="The cast of one night, filed as a register of persons.">
+  <div class="page">
+    <h1>Register of persons</h1>
+    <div class="people-intro">
+      <Plate slot="people-poster" />
+      <p>The cast of one night. Each file says who they are, how they fight if you control them, what we can source, and what stays sealed until you open it.</p>
+      <p class="kana" aria-hidden="true">クーデルカ</p>
+    </div>
+
+    <Plate slot="people-hero" class="pic-hero" />
+
+    <h2>The guests</h2>
+    <Deck client:visible cards={cards} />
+    <div class="grid3">
+      {guests.map((p) => <PersonCard id={p.id} name={p.data.name} number={p.data.number} roles={p.data.roles} summary={p.data.summary} />)}
+    </div>
+
+    {groups.map(([key, title]) => (
+      <section>
+        <h2>{title}</h2>
+        <div class="grid3">
+          {all.filter((p) => p.data.group === key).map((p) => (
+            <div class="locked" data-name={p.data.name}>
+              <PersonCard id={p.id} name={p.data.name} number={p.data.number} roles={p.data.roles} summary={p.data.summary} sealed />
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+  <script>
+    // Adds a red seal over every non-guest card. Clicking it splits the seal in two and clears it.
+    // Without JavaScript no seal is drawn and the (spoiler-free) cards are simply readable.
+    for (const box of document.querySelectorAll<HTMLElement>('.locked')) {
+      const card = box.querySelector<HTMLElement>('.pcard');
+      const cover = document.createElement('button');
+      cover.type = 'button';
+      cover.className = 'cover';
+      cover.setAttribute('aria-label', `Sealed file. Open the seal to read about ${box.dataset.name ?? 'this person'}.`);
+      cover.innerHTML = '<span class="half l"><span>SEALED</span></span><span class="half r"><span>SEALED</span></span>';
+      card?.setAttribute('inert', '');
+      cover.addEventListener('click', () => {
+        cover.dataset.open = 'true';
+        card?.removeAttribute('inert');
+        const done = (): void => cover.remove();
+        // Remove after the split finishes; immediately when motion is off.
+        setTimeout(done, matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.motion === 'off' ? 0 : 600);
+      });
+      box.append(cover);
+    }
+  </script>
+</Base>

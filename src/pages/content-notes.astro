@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+const game = [
+  ['Horror and body horror', 'Monsters made from corpses and fragments of bodies; an ossuary setting.'],
+  ['Violence and death', 'Murder, poisoning, the execution of a child, suicide and an attempt to bring a dead person back.'],
+  ['Torture and imprisonment', 'The monastery was a prison for dissidents; torture is part of its history.'],
+  ['Religion and the occult', 'A Catholic bishop, accusations of heresy, necromancy and ritual magic.'],
+  ['Real historical events', 'The 1878 Princess Alice disaster and real figures such as Lord Dunsany and Roger Bacon, fictionalised in the game. The archive separates history from fiction.'],
+  ['Sexual exploitation', 'A passing mention in a character’s past.'],
+];
+---
+<Base title="Content notes" current="/content-notes" description="What the game and this site contain: horror, violence, flicker and sound.">
+  <div class="page ed">
+    <h1>Content notes</h1>
+    <p>The categories are listed openly. Details that would spoil the story stay sealed until you open them.</p>
+    <h2>In the game</h2>
+    <table class="tbl"><tbody>{game.map(([t, d]) => <tr><th scope="row">{t}</th><td>{d}</td></tr>)}</tbody></table>
+    <p class="mono">The game was rated M (Mature 17+) in North America for animated blood, gore and violence.</p>
+    <h2>On this site</h2>
+    <ul>
+      <li><strong>Grain and scanlines</strong> are faint and fixed. Nothing flashes more than three times a second.</li>
+      <li><strong>Motion:</strong> the MOTION button, or your system's “reduce motion” setting, turns off camera movement, the glass overlay and glitch effects.</li>
+      <li><strong>Sound</strong> is always off until you turn it on, and it is quiet.</li>
+      <li><strong>Spoilers:</strong> the story is sealed in layers. Nothing in a title, description or image text gives anything away.</li>
+    </ul>
+  </div>
+</Base>

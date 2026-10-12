@@ -1,0 +1,52 @@
+/* All design tokens live here. Stylelint (later) forbids raw colors elsewhere. */
+:root {
+  --soot: #090d0e;
+  --crypt: #10171a;
+  --paper: #e6dcc6;
+  --paper-dim: #9fada6;
+  --ink: #12100e;
+  --blood: #8a1d2c;
+  --blood-text: #e27a85;
+  --sick: #6fa89a;
+  --gilt: #d9a441;
+  --edge: #6f8582;
+  --line: #2c3a3d;
+
+  --ink-dim: #4a3a2c;
+  --hair-paper: #a8987a;
+  --world-fog: #1a2624;
+  --world-bg: #0b100f;
+  --plate: rgb(9 13 14 / 0.88);
+
+  /* Parchment, wax and the second family of dark surfaces. */
+  --leaf: #d9c8a2;
+  --leaf-2: #cbb78c;
+  --leaf-hi: #e4d6b4;
+  --ink-brown: #1b130c;
+  --crypt-2: #182226;
+  --wax-hi: #c2414f;
+  --wax: #8a1d2c;
+  --wax-lo: #4e0e19;
+  --foxing: rgb(120 80 30 / 0.1);
+  --burn: rgb(70 40 12 / 0.38);
+
+  --font-title: 'Cinzel Decorative', 'Cinzel Variable', Georgia, serif;
+  --font-script: 'Pinyon Script', 'Snell Roundhand', cursive;
+  --font-initial: 'UnifrakturCook', 'Old English Text MT', serif;
+  --font-fell: 'IM Fell English', 'Newsreader Variable', Georgia, serif;
+  --font-display: 'Cinzel Variable', 'Trajan Pro', Georgia, serif;
+  --font-body: 'Newsreader Variable', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --hairline: 1px;
+  --rule: 2px;
+  --radius: 0;
+  --shadow: 4px 4px 0 0 var(--line);
+  --shadow-line-lg: 6px 6px 0 0 var(--line);
+  --shadow-line-sm: 2px 2px 0 0 var(--line);
+  --shadow-inset: inset 0 -3px 0 var(--gilt);
+
+  --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 32px; --s6: 48px; --s7: 64px; --s8: 96px;
+  --measure: 66ch;
+  --nav-h: 48px;
+}

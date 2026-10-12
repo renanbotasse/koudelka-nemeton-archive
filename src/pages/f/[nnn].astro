@@ -1,0 +1,22 @@
+---
+// Short, citable addresses: /f/002 → the readable route of case file 002.
+import { CATALOG } from '../../lib/catalog';
+
+export function getStaticPaths() {
+  return CATALOG.map((e) => ({ params: { nnn: String(e.number).padStart(3, '0') }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${entry.href}`} />
+    <link rel="canonical" href={entry.href} />
+    <title>File {String(entry.number).padStart(3, '0')} · The Nemeton Archive</title>
+  </head>
+  <body>
+    <p>File {String(entry.number).padStart(3, '0')} has moved to <a href={entry.href}>{entry.title}</a>.</p>
+  </body>
+</html>

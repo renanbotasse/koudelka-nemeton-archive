@@ -1,0 +1,22 @@
+---
+import { CATALOG } from '../lib/catalog';
+// Sealed files show nothing but the seal until the visitor opens it: no number, no name, no kind.
+---
+<ul class="catalog">
+  {CATALOG.map((e) => e.sealed === 'none' ? (
+    <li>
+      <span>{String(e.number).padStart(3, '0')}&nbsp; <a href={e.href}>{e.title.toUpperCase()}</a></span>
+      <span>{e.kind}</span>
+    </li>
+  ) : (
+    <li class="catalog-sealed">
+      <details>
+        <summary><span class="seal-marker">▇▇▇ [SEALED]</span></summary>
+        <div class="seal-content">
+          <span>{String(e.number).padStart(3, '0')}&nbsp; <a href={e.href}>{e.title.toUpperCase()}</a> · {e.sealed.toUpperCase()}</span>
+          <span>{e.kind}</span>
+        </div>
+      </details>
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import WorldMap from '../../components/WorldMap';
+import Plate from '../../components/Plate.astro';
+import { getCollection } from 'astro:content';
+
+const places = (await getCollection('places')).sort((a, b) => a.data.order - b.data.order);
+const rooms = places.map((p) => ({ id: p.id, name: p.data.name, layer: p.data.layer, href: `/walkthrough/${p.id}`, order: p.data.order, summary: p.data.summary }));
+const discs = [1, 2, 3, 4];
+---
+<Base title="Walkthrough" current="/walkthrough" description="A walkthrough of Nemeton in the order you visit it: routes, key items, bosses and puzzles, area by area.">
+  <div class="page ed">
+    <p class="mono">Walkthrough</p>
+    <h1>The Walkthrough</h1>
+    <p>Nemeton, area by area, in the order you reach it: where to go, which items you must not miss, what waits in each place and how to get past it.</p>
+    <Plate slot="walk-hero" class="pic-hero" />
+    <aside class="note">
+      <p class="mono">HOW TO READ THIS</p>
+      <p>The game has four discs. The end of disc two, at midnight in the church nave, is confirmed by more than one source. The other disc boundaries come from a single recorded play-through, so treat them as a guide. Spoilers are kept to the minimum a route needs, and the heavier ones are sealed.</p>
+    </aside>
+
+    <p><a class="btn" href="/walkthrough/battle">Battle, magic and items</a></p>
+
+    <h2>The model</h2>
+    <p>Turn it with your mouse or finger, zoom, press a numbered pin to go to an area, and slide the cutaway to open the building down to the crypt, the cells and the tunnel.</p>
+    <WorldMap client:visible rooms={rooms} />
+
+    <Plate slot="walk-elevation" />
+
+    <h2>The Walkthrough</h2>
+    {discs.map((d) => (
+      <section class="disc-group">
+        <h3>Disc {d}</h3>
+        <ol class="area-list">
+          {places.filter((p) => p.data.disc === d).map((p) => (
+            <li>
+              <span class="area-no" aria-hidden="true">{String(p.data.order).padStart(2, '0')}</span>
+              <div>
+                <a href={`/walkthrough/${p.id}`}><strong>{p.data.name}</strong></a>
+                <p style="margin:4px 0 0">{p.data.summary}</p>
+                {p.data.spoilerLevel !== 'none' && <span class="mono">{`SOME SEALED · ${p.data.spoilerLevel.toUpperCase()}`}</span>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+
+    <h2>Floor maps</h2>
+    <div class="pics-grid">
+      <Plate slot="map-floor-1" /><Plate slot="map-floor-2" /><Plate slot="map-floor-3" /><Plate slot="map-floor-0" />
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+// Living styleguide. Contrast ratios are computed here at build time, not typed in by hand.
+import { contrast } from '../lib/contrast';
+
+const tokens = [
+  ['--soot', '#090d0e', 'base background'], ['--crypt', '#10171a', 'dark surfaces'], ['--paper', '#e6dcc6', 'text on dark / ARCHIVE surface'],
+  ['--paper-dim', '#9fada6', 'secondary text on dark'], ['--ink', '#12100e', 'text on paper'], ['--ink-dim', '#4a3a2c', 'secondary text on paper'],
+  ['--blood', '#8a1d2c', 'seals, links on paper'], ['--blood-text', '#e27a85', 'red text on dark'], ['--sick', '#6fa89a', 'status'],
+  ['--gilt', '#d9a441', 'focus, CTA on dark'], ['--edge', '#6f8582', 'control borders'], ['--line', '#2c3a3d', 'decoration only'],
+] as const;
+const pairs = [
+  ['paper', '#e6dcc6', 'soot', '#090d0e'], ['paper-dim', '#9fada6', 'soot', '#090d0e'], ['ink', '#12100e', 'paper', '#e6dcc6'],
+  ['ink-dim', '#4a3a2c', 'paper', '#e6dcc6'], ['blood', '#8a1d2c', 'paper', '#e6dcc6'], ['blood-text', '#e27a85', 'soot', '#090d0e'],
+  ['gilt', '#d9a441', 'soot', '#090d0e'], ['ink', '#12100e', 'gilt', '#d9a441'], ['edge', '#6f8582', 'soot', '#090d0e'],
+  ['gilt', '#d9a441', 'paper', '#e6dcc6'],
+] as const;
+---
+<Base title="System" current="" index={false}>
+  <div class="page">
+    <p class="mono">System · not linked, not indexed</p>
+    <h1>System</h1>
+    <p>The identity as code: tokens, contrast, type and every component. If this page looks right, the site does.</p>
+
+    <h2>Colour</h2>
+    <div class="grid3">
+      {tokens.map(([name, hex, use]) => (
+        <div class="sheet" style={`background:${hex}`}>
+          <span class="mono" style={`color:${contrast(hex, '#e6dcc6') >= 4.5 ? '#e6dcc6' : '#12100e'}`}>{name}<br />{hex}<br />{use}</span>
+        </div>
+      ))}
+    </div>
+
+    <h2>Contrast (computed)</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">Text</th><th scope="col">On</th><th scope="col">Ratio</th><th scope="col">Result</th></tr></thead>
+      <tbody>
+        {pairs.map(([a, ha, b, hb]) => {
+          const r = contrast(ha, hb);
+          return <tr><td>{a} {ha}</td><td>{b} {hb}</td><td>{r.toFixed(2)}:1</td><td>{r >= 4.5 ? 'PASS AA' : r >= 3 ? 'UI ONLY (3:1)' : 'FAIL — never for text'}</td></tr>;
+        })}
+      </tbody>
+    </table>
+
+    <h2>Type</h2>
+    <h1 style="font-size:3rem">Display · Cinzel</h1>
+    <p>Narrative · Newsreader. The monastery keeps what the house kept, and no one reads it twice.</p>
+    <p class="mono">Labels · Cinzel capitals</p>
+
+    <h2>Components</h2>
+    <p><a class="btn" href="#">Primary</a> <a class="btn btn--ghost" href="#">Secondary</a> <span class="stamp">FAN RECONSTRUCTION · NOT AN ORIGINAL DOCUMENT</span></p>
+    <details class="seal"><summary>[SEALED — story spoilers]</summary><div><p>A sealed block, native details, no JavaScript.</p></div></details>
+    <aside class="note"><p class="mono">EDITORIAL NOTE</p><p>A margin note.</p></aside>
+  </div>
+</Base>

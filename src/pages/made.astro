@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="How this was made" current="/about" description="The concept, the palette, the PS1 look and the limits behind the Nemeton Archive.">
+  <div class="page ed">
+    <h1>How this archive was made</h1>
+    <p>A fan site should not be a wiki. This one is built as a dossier you descend through, with a small PS1-style world behind the text. These are the decisions, and what was left out.</p>
+
+    <h2>The idea</h2>
+    <p>Two borrowed structures. From an archive: files, items and a source on every claim, so everything can be checked. From a film: a single vertical descent, from the cliff to the crypt, one idea per screen.</p>
+
+    <h2>Three layers</h2>
+    <ul>
+      <li><strong>World:</strong> a 3D monastery drawn at 320×240 and scaled up with hard pixels. Vertices snap to a grid, textures warp the way they did in 1999, colour is reduced to 15 bits and dithered. It is built entirely from primitives in code. Nothing is from the game.</li>
+      <li><strong>Document:</strong> everything you read. Flat, sharp-cornered, high contrast. The old-hardware look never touches text.</li>
+      <li><strong>Glass:</strong> a faint CRT overlay of grain, vignette and scanlines. It turns off with the MOTION button or your system's reduced-motion setting.</li>
+    </ul>
+
+    <h2>Palette and type</h2>
+    <p>Soot black, aged paper, a dried-blood red, a sickly green and old gold, with every text pair checked for contrast (see <a href="/system">the system page</a>). Type is Cinzel for headings, Newsreader for reading and IBM Plex Mono for metadata, all open-licensed and served from this site.</p>
+
+    <h2>Limits that shaped it</h2>
+    <ul>
+      <li><strong>No game assets, no music.</strong> The monastery, the writing, the drawings and the sound on this site are original, and the page <a href="/design">on sound</a> hosts none of the score.</li>
+      <li><strong>It works without the 3D.</strong> No WebGL, reduced motion or data-saver mode, and you get the full text and an engraving instead of the model.</li>
+      <li><strong>Spoilers are opt-in.</strong> Sealed blocks are native HTML, so they work without JavaScript, and nothing sealed reaches a title, a description or a preview.</li>
+    </ul>
+
+    <h2>What was left out</h2>
+    <p>A recreation of the game's rooms, any music, a wiki's worth of stats, and a global “reveal everything” switch. They were cut on purpose.</p>
+    <p class="mono">Built with Astro, SolidJS and three.js. Open source fonts: Cinzel, Newsreader, IBM Plex Mono.</p>
+  </div>
+</Base>

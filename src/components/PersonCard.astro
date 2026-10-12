@@ -1,0 +1,12 @@
+---
+import { findImage } from '../lib/images';
+interface Props { id: string; name: string; number: number; roles: string; summary: string; sealed?: boolean; }
+const { id, name, roles, summary, sealed = false } = Astro.props;
+const photo = (await findImage(`person-${id}-portrait`))?.src ?? `/world/busts/${id}.png`;
+---
+<a class="sheet pcard" href={`/people/${id}`} data-sealed={sealed ? 'true' : undefined}>
+  <span class="mount"><img class="pcard-img" src={photo} width="160" height="200" alt={`Low-poly portrait of ${name} (original artwork)`} loading="lazy" /></span>
+  <span class="mono">{roles}</span>
+  <h3>{name}</h3>
+  <span class="sheet-bio">{summary}</span>
+</a>

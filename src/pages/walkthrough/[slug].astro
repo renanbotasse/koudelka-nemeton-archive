@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Plate from '../../components/Plate.astro';
+import { getCollection } from 'astro:content';
+import { safeForMetadata } from '../../lib/spoilers';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('places')).sort((a, b) => a.data.order - b.data.order);
+  return all.map((entry, i) => ({ params: { slug: entry.id }, props: { entry, prev: all[i - 1], next: all[i + 1] } }));
+}
+const { entry, prev, next } = Astro.props;
+const d = entry.data;
+const layerName = { ground: 'GROUND', below: 'BELOW', tower: 'TOWER' }[d.layer];
+const description = safeForMetadata(d.spoilerLevel) ? d.summary : 'A walkthrough area.';
+const floors = d.floor ? d.floor.split(',') : [];
+---
+<Base title={d.name} description={description} current="/walkthrough">
+  <article class="page ed">
+    <p class="mono"><a href="/walkthrough">Walkthrough</a> · Area {String(d.order).padStart(2, '0')} · DISC {d.disc} · {layerName}</p>
+    <h1>{d.name}</h1>
+    <p class="mono">{d.spoilerLevel === 'none' ? 'NO SPOILERS' : `SOME SEALED · ${d.spoilerLevel.toUpperCase()}`}</p>
+    <p class="initial">{d.what}</p>
+    <Plate slot={`area-${entry.id}-shot`} />
+
+    {d.route.length > 0 && <><h2>Route</h2><ol>{d.route.map((r) => <li>{r}</li>)}</ol></>}
+    {d.items.length > 0 && <><h2>Do not miss</h2><ul>{d.items.map((r) => <li>{r}</li>)}</ul></>}
+    {d.foes && <><h2>Enemies and bosses</h2><p>{d.foes}</p></>}
+    {d.puzzle && <><h2>Puzzle</h2><p>{d.puzzle}</p></>}
+    {d.tip && <aside class="note"><p class="mono">TIP</p><p>{d.tip}</p></aside>}
+    {d.sealed && <details class="seal"><summary>[SEALED — {d.spoilerLevel === 'endings' ? 'the endings' : 'story spoilers'}]</summary><div><p>{d.sealed}</p></div></details>}
+
+    <h2>Map</h2>
+    <div class="pics-grid">
+      <Plate slot={`area-${entry.id}-map`} />
+      {floors.map((f) => <Plate slot={`map-floor-${f}`} />)}
+    </div>
+    <p>{d.floor ? `This area sits on floor ${d.floor}.` : 'This area is on the open grounds.'}</p>
+    <nav class="next mono" aria-label="Walkthrough order">
+      {prev ? <a href={`/walkthrough/${prev.id}`}>← {prev.data.name}</a> : <a href="/walkthrough">← Walkthrough</a>}
+      {next ? <a href={`/walkthrough/${next.id}`}>{next.data.name} →</a> : <a href="/walkthrough">Walkthrough →</a>}
+    </nav>
+  </article>
+</Base>
